@@ -13,7 +13,7 @@ const ROLES = [
     team: "Platform",
     location: "Chennai · IITM Research Park / Remote",
     type: "Full-time internship",
-    stack: "TypeScript · React · Node · Postgres",
+    stack: "Next.js · TypeScript · Supabase",
     blurb:
       "Own end-to-end features on the quoting & collaboration platform. Ship to real manufacturers in week one.",
   },
@@ -22,7 +22,7 @@ const ROLES = [
     team: "Quoting Intelligence",
     location: "Chennai / Remote",
     type: "Full-time internship",
-    stack: "Python · LLMs · Geometry · CAD parsing",
+    stack: "FastAPI · Python · LLMs · CAD",
     blurb:
       "Build the instant-quote engine: extract features from STEP/STL/PDFs and price parts in seconds.",
   },
@@ -31,7 +31,7 @@ const ROLES = [
     team: "Product",
     location: "Chennai / Remote",
     type: "Full-time internship",
-    stack: "Figma · React · Motion",
+    stack: "Figma · Next.js · Motion",
     blurb:
       "Design and ship the surfaces engineers use every day — from CAD viewers to supplier dashboards.",
   },
@@ -40,7 +40,7 @@ const ROLES = [
     team: "Ops × Engineering",
     location: "Chennai",
     type: "Full-time internship",
-    stack: "DFM · CNC · 3DP · Python",
+    stack: "FastAPI · PostgreSQL · DFM",
     blurb:
       "Sit between suppliers and software. Translate shop-floor reality into product workflows.",
   },
@@ -67,6 +67,7 @@ function Index() {
       <Marquee />
       <Mission />
       <Platform />
+      <Stack />
       <Values />
       <Roles />
       <Apply />
@@ -294,6 +295,51 @@ function FeatureCard({ tag, title, desc }: { tag: string; title: string; desc: s
 }
 
 function Values() {
+  return ValuesInner();
+}
+
+const STACK = [
+  { name: "Next.js", desc: "App Router · Server Components · Edge", icon: "▲" },
+  { name: "FastAPI", desc: "Quote engine · CAD parsing · ML services", icon: "⚡" },
+  { name: "Supabase", desc: "Auth · Realtime · Storage", icon: "◆" },
+  { name: "PostgreSQL", desc: "Source of truth for parts, quotes, orders", icon: "🐘" },
+  { name: "Vercel", desc: "Preview deploys on every PR", icon: "◇" },
+  { name: "TypeScript", desc: "End to end. No surprises.", icon: "TS" },
+];
+
+function Stack() {
+  return (
+    <section id="stack" className="border-t border-border">
+      <div className="mx-auto max-w-7xl px-6 py-28">
+        <div className="grid gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <div className="text-xs uppercase tracking-[0.2em] text-primary">The Stack</div>
+            <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
+              Modern tools. <br />Boring choices. <br />Fast shipping.
+            </h2>
+            <p className="mt-5 max-w-md text-muted-foreground">
+              We pick technology that lets a small team ship like a big one.
+              You'll write production code on day one — no ceremony, no committees.
+            </p>
+          </div>
+          <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:col-span-7 lg:grid-cols-3">
+            {STACK.map((s) => (
+              <div key={s.name} className="group bg-background p-6 transition hover:bg-card">
+                <div className="flex h-10 w-10 items-center justify-center rounded-md border border-border bg-card font-mono text-sm text-primary">
+                  {s.icon}
+                </div>
+                <div className="mt-4 font-semibold tracking-tight">{s.name}</div>
+                <div className="mt-1 text-xs text-muted-foreground">{s.desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ValuesInner() {
   return (
     <section id="values" className="relative overflow-hidden">
       <img
