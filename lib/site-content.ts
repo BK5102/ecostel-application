@@ -1,0 +1,319 @@
+export type PageContent = {
+  title: string;
+  eyebrow: string;
+  description: string;
+  sections: Array<{
+    title: string;
+    description: string;
+  }>;
+};
+
+export type NavGroup = {
+  label: string;
+  href: string;
+  items: Array<{ label: string; href: string; description: string }>;
+};
+
+export const capabilities = [
+  {
+    slug: "3d-printing-services",
+    label: "3D Printing Services",
+    description:
+      "Reliable 3D printing infrastructure for prototyping, testing, and scaled production workflows.",
+    image: "/notion-assets/page-03-image-02.png",
+    items: [
+      "Fused Deposition Modeling (FDM)",
+      "HP Multi Jet Fusion (MJF)",
+      "Selective Laser Sintering (SLS)",
+      "Stereolithography (SLA)",
+      "PolyJet",
+      "Direct Metal Laser Sintering (DMLS)",
+    ],
+    materials: [
+      "FDM production polymers",
+      "MJF engineering-grade nylon",
+      "SLS functional prototyping powders",
+      "SLA high-detail resins",
+      "PolyJet visual models",
+      "DMLS metal alloys",
+    ],
+  },
+  {
+    slug: "cnc-machining",
+    label: "CNC Machining",
+    description: "Precision CNC workflows for complex parts and repeatable production.",
+    image: "/notion-assets/page-02-image-01.png",
+    items: ["CNC Milling", "CNC Turning", "CNC Routing", "EDM", "Micro Machining"],
+  },
+  {
+    slug: "sheet-tube-fabrication",
+    label: "Sheet & Tube Fabrication",
+    description: "Sheet cutting, tube cutting, forming, welding, and assembly support.",
+    image: "/notion-assets/page-10-image-02.png",
+    items: [
+      "Sheet Cutting",
+      "Laser Cutting",
+      "Waterjet Cutting",
+      "Laser Tube Cutting",
+      "Tube Bending",
+      "Welding (TIG/MIG/Arc)",
+      "Riveting",
+      "Brazing",
+      "Forming",
+      "Assembly service",
+    ],
+  },
+  {
+    slug: "injection-molding",
+    label: "Injection Molding",
+    description: "Prototype and production molding for plastic parts and complex assemblies.",
+    image: "/notion-assets/page-10-image-04.png",
+    items: ["Plastic Injection Molding", "Prototype Molding", "Production Molding", "Insert Molding", "Overmolding", "Micro Molding"],
+  },
+  {
+    slug: "casting",
+    label: "Casting",
+    description: "Casting options for production-ready metal parts.",
+    image: "/notion-assets/page-10-image-03.png",
+    items: ["Die Casting", "Sand Casting", "Investment Casting"],
+  },
+  {
+    slug: "surface-protection",
+    label: "Surface & Protection",
+    description: "Finishing and protection services for durable production output.",
+    image: "/notion-assets/page-03-image-03.png",
+    items: ["Painting", "Anodizing", "Plating", "Polishing", "Powder Coating"],
+  },
+];
+
+export const industries = [
+  ["Semiconductor Equipment", "/notion-assets/page-10-image-04.png"],
+  ["Aerospace", "/notion-assets/page-11-image-01.jpg"],
+  ["Robotics", "/notion-assets/page-10-image-03.png"],
+  ["Defence", "/notion-assets/page-11-image-02.jpg"],
+  ["Medical", "/notion-assets/page-10-image-02.png"],
+  ["Consumer Appliances", "/notion-assets/page-10-image-05.png"],
+].map(([label, image]) => ({
+  slug: label.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""),
+  label,
+  image,
+  description: "Manufacturing support for teams building the next generation of products.",
+}));
+
+export const solutions = [
+  {
+    slug: "instant-quote",
+    label: "Instant Quote",
+    description:
+      "Upload your parts and get fast, reliable quotes powered by experts and AI, with easy comparison to choose the best price.",
+    image: "/notion-assets/page-05-image-01.png",
+    sections: [
+      {
+        title: "Quote with Speed and Clarity",
+        description:
+          "Our team checks your design and shares useful feedback, so you can decide quickly and move forward without delays.",
+      },
+      {
+        title: "Get Accurate Quotes Easily",
+        description:
+          "Upload your parts and get fast, reliable quotes powered by experts and AI, with easy comparison to choose the best price.",
+      },
+      {
+        title: "Long-Term Production Planning",
+        description: "We plan repeat orders ahead keeping production smooth and predictable.",
+      },
+      {
+        title: "Compare Options Easily",
+        description:
+          "Find different prices and delivery times in one place, so you can choose the best option from trusted partners without the hassle.",
+      },
+    ],
+  },
+  {
+    slug: "collaboration",
+    label: "Collaboration",
+    description:
+      "Work closely with our team and suppliers in one place. Get DFM feedback early, make better decisions, and build strong relationships you can rely on.",
+    image: "/notion-assets/page-06-image-02.png",
+    sections: [
+      {
+        title: "Work Better on Quotes and Orders",
+        description:
+          "Work closely with our team and suppliers in one place. Get DFM feedback early, make better decisions, and build strong relationships you can rely on.",
+      },
+      {
+        title: "Work Better with Suppliers",
+        description:
+          "Share files, updates, and feedback directly on your CAD designs. Keep all communication and changes in one place, with no more confusing email threads.",
+      },
+      {
+        title: "Work Together",
+        description:
+          "Share quotes, orders, and messages with your team so everyone stays updated. Control who can see or edit things based on their role.",
+      },
+    ],
+  },
+  {
+    slug: "project-tracking",
+    label: "Project Tracking",
+    description:
+      "Stay organized with simple tools to track, review, and collaborate so everyone stays on the same page.",
+    image: "/notion-assets/page-08-image-02.png",
+    sections: [
+      {
+        title: "Handle quotes and orders with ease",
+        description:
+          "Stay organized with simple tools to track, review, and collaborate so everyone stays on the same page.",
+      },
+      {
+        title: "Track Your Orders in Real Time",
+        description:
+          "See exactly where your parts are in the process at any moment. Get updates as things move forward, so you're never left guessing or chasing for status.",
+      },
+      {
+        title: "Monitor Supplier Performance",
+        description:
+          "Easily see how your suppliers are doing. The system automatically tracks key details like delivery reliability, quote speed, and order acceptance so you always know who performs best.",
+      },
+      {
+        title: "Manage updates and spending",
+        description:
+          "Stay on top of part updates, follow your orders, and clearly see where your money is going.",
+      },
+    ],
+  },
+  {
+    slug: "quality-management",
+    label: "Quality Management",
+    description: "Every part meets specifications, with controlled processes and timely delivery.",
+    image: "/notion-assets/page-03-image-03.png",
+    sections: [
+      { title: "Understand requirements", description: "Ecostel Quality framework covers: Understand requirements." },
+      { title: "Continuous QMS improvement", description: "Continuous QMS improvement." },
+      { title: "Controlled processes", description: "Controlled processes. Consistent output." },
+    ],
+  },
+  {
+    slug: "tariff-management",
+    label: "Tariff Management",
+    description: "Clear order, supplier, and spend visibility for manufacturing decisions.",
+    image: "/notion-assets/page-08-image-01.jpg",
+    sections: [
+      {
+        title: "Manage updates and spending",
+        description:
+          "Stay on top of part updates, follow your orders, and clearly see where your money is going.",
+      },
+    ],
+  },
+];
+
+export const resources = [
+  {
+    slug: "case-studies",
+    label: "Case Studies",
+    description: "Built for teams that can't afford delays.",
+    image: "/notion-assets/page-10-image-03.png",
+  },
+  {
+    slug: "articles",
+    label: "Articles",
+    description: "Engineering and manufacturing notes from Ecostel.",
+    image: "/notion-assets/page-10-image-02.png",
+  },
+  {
+    slug: "webinar",
+    label: "Webinar",
+    description: "Future sessions for manufacturing teams and product builders.",
+    image: "/notion-assets/page-10-image-04.png",
+  },
+];
+
+export const aboutContent: PageContent = {
+  title: "Built for teams that can't afford delays.",
+  eyebrow: "About us",
+  description:
+    "We work with teams building the next generation of products. Join us in making manufacturing faster, smarter, and more reliable.",
+  sections: [
+    {
+      title: "Ecostel",
+      description:
+        "We believe building great products shouldn't be limited by manufacturing complexity. Whether it's aerospace, medical, or next-gen technology, turning ideas into reality should be fast and reliable.",
+    },
+    {
+      title: "We fix that",
+      description:
+        "Our platform brings quoting, communication, and execution into one place. With vetted manufacturing partners and full ownership of delivery, we ensure faster turnaround, complete visibility, and reliable outcomes from prototype to production.",
+    },
+    {
+      title: "Infrastructure modern manufacturing has been missing",
+      description:
+        "We're building the infrastructure modern manufacturing has been missing and we're aiming for Mars.",
+    },
+  ],
+};
+
+export const values = [
+  ["We Move Fast", "We trust those closest to the work to make the right calls, removing bottlenecks and enabling faster, more effective execution."],
+  ["We hire for Attitude", "Skills can be taught attitude cannot. We work with people who take ownership, stay curious, and show the drive to solve problems."],
+  ["Performance over Presence", "We focus on outcomes, not hours. You're trusted to manage your time and deliver results. Ownership and accountability matter more than being seen."],
+  ["Transparency", "We keep things open and clear. Everyone understands what's happening, what's working, and what needs to improve so we can make better decisions together."],
+  ["Ship Fast. Improve Faster.", "We move forward and learn as we go. Instead of waiting for perfect, we launch, gather feedback, and continuously improve."],
+  ["Customer First", "We put the customer first in everything we do. We respond quickly, understand their needs, and focus on doing the job right, so they can rely on us every time."],
+  ["Technology-Driven", "We leverage technology to simplify, scale, and deliver better outcomes."],
+  ["Built for Impact", "We support industries that shape the future like aerospace, space, medical, and advanced engineering."],
+  ["Think Independently. Fix What's Broken", "We don't follow things just because that's how it's done. If something isn't working, we speak up and take action."],
+  ["Privacy", "We treat your data with care and respect. It belongs to you, not us."],
+];
+
+export const navGroups: NavGroup[] = [
+  {
+    label: "Capabilities",
+    href: "/capabilities",
+    items: capabilities.map((item) => ({
+      label: item.label,
+      href: `/capabilities/${item.slug}`,
+      description: item.description,
+    })),
+  },
+  {
+    label: "Industries",
+    href: "/industries",
+    items: industries.map((item) => ({
+      label: item.label,
+      href: `/industries/${item.slug}`,
+      description: item.description,
+    })),
+  },
+  {
+    label: "Solutions",
+    href: "/solutions",
+    items: solutions.map((item) => ({
+      label: item.label,
+      href: `/solutions/${item.slug}`,
+      description: item.description,
+    })),
+  },
+  {
+    label: "Resource",
+    href: "/resources",
+    items: resources.map((item) => ({
+      label: item.label,
+      href: `/resources/${item.slug}`,
+      description: item.description,
+    })),
+  },
+  {
+    label: "About us",
+    href: "/about",
+    items: [
+      { label: "About Ecostel", href: "/about", description: aboutContent.description },
+      { label: "How we work", href: "/about#values", description: "We're not built like a traditional company." },
+      { label: "Privacy", href: "/about#privacy", description: "We treat your data with care and respect." },
+    ],
+  },
+];
+
+export function findBySlug<T extends { slug: string }>(items: T[], slug: string) {
+  return items.find((item) => item.slug === slug);
+}
