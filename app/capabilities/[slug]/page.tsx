@@ -25,7 +25,7 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
     <>
       <PageHero eyebrow="Capabilities" title={item.label} description={item.description} />
       <PageLayout items={capabilities.map((capability) => ({ label: capability.label, href: `/capabilities/${capability.slug}` }))}>
-        <ContentPanel title={item.label} description={item.description} image={item.image}>
+        <ContentPanel title={item.label} description={item.description}>
           <div className="tag-list">
             {item.items.map((tag) => (
               <span className="tag" key={tag}>

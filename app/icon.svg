@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
-  <circle cx="40" cy="40" r="40" fill="#6fbd3f"/>
-  <path d="M24 14h38v19H43v14h19v19H24V47h10V33H24V14Z" fill="#fff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164 164">
+  <circle cx="82" cy="82" r="78" fill="#6fbd3f"/>
+  <path d="M51 29h62v31H94v13h19v31H94v13h19v31H51v-31h20v-13H51V73h20V60H51V29Z" fill="#fff"/>
 </svg>

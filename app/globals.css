@@ -111,6 +111,21 @@ img {
   letter-spacing: 0;
 }
 
+.logo-light .logo-mark {
+  color: #fff;
+  height: 42px;
+  width: 42px;
+}
+
+.logo-light .logo-mark path {
+  fill: #000;
+}
+
+.logo-light .logo-word {
+  color: #fff;
+  font-size: 28px;
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
@@ -336,6 +351,29 @@ img {
   margin: 8px 0 0;
 }
 
+.section-copy {
+  color: var(--muted);
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.45;
+  margin: 16px 0 0;
+  max-width: 780px;
+}
+
+.section-copy + .section-copy {
+  margin-top: 6px;
+}
+
+.capability-process-image {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  height: auto;
+  margin: 0 0 28px;
+  padding: 18px;
+  width: 100%;
+}
+
 .grid {
   display: grid;
   gap: 16px;
@@ -540,17 +578,71 @@ img {
 }
 
 .site-footer {
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-  padding: 34px 24px;
+  background: #000;
+  color: #fff;
+  margin-top: 28px;
+  overflow: hidden;
+  padding: 0 24px 74px;
 }
 
 .footer-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
   margin: 0 auto;
-  max-width: 1180px;
+  max-width: 1920px;
+}
+
+.footer-hero h2 {
+  color: #fff;
+  font-size: clamp(44px, 6.2vw, 112px);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.1;
+  margin: 0 0 72px;
+  max-width: 1800px;
+}
+
+.footer-grid {
+  display: grid;
+  gap: 64px;
+  grid-template-columns: 1.25fr 1fr 0.55fr 0.75fr;
+}
+
+.footer-grid h3 {
+  color: #fff;
+  font-size: clamp(24px, 2.1vw, 36px);
+  letter-spacing: 0;
+  line-height: 1.2;
+  margin: 0 0 42px;
+}
+
+.footer-brand h3 {
+  font-size: clamp(30px, 3vw, 48px);
+  font-weight: 900;
+  margin-top: 44px;
+  max-width: 440px;
+}
+
+.footer-brand p {
+  color: #fff;
+  font-size: clamp(20px, 1.7vw, 30px);
+  line-height: 1.35;
+  margin: 34px 0 0;
+  max-width: 420px;
+}
+
+.footer-links {
+  display: grid;
+  gap: 24px;
+}
+
+.footer-links a,
+.footer-links span {
+  color: #fff;
+  font-size: clamp(20px, 1.5vw, 28px);
+  line-height: 1.25;
+}
+
+.footer-links a:hover {
+  color: #6fbd3f;
 }
 
 @media (max-width: 920px) {
@@ -588,5 +680,17 @@ img {
   .section-heading {
     align-items: start;
     flex-direction: column;
+  }
+
+  .site-footer {
+    padding-bottom: 46px;
+  }
+
+  .footer-hero h2 {
+    margin-bottom: 54px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
   }
 }

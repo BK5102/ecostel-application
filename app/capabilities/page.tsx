@@ -13,11 +13,19 @@ export default function CapabilitiesPage() {
       <PageHero
         eyebrow="Capabilities"
         title="Manufacturing as an on-demand system layer."
-        description="Reliable manufacturing infrastructure for prototyping, testing, and scaled production workflows."
+        description="Built on advanced manufacturing infrastructure with reliable delivery and reduced operational friction."
+      />
+      <p className="section-copy">Structured matter from structured data.</p>
+      <Image
+        className="capability-process-image"
+        src="/notion-assets/manufacturing-parts-only.png"
+        alt="3D printing manufacturing process parts"
+        width={1415}
+        height={520}
       />
       <PageLayout items={capabilities.map((item) => ({ label: item.label, href: `/capabilities/${item.slug}` }))}>
         {capabilities.map((item) => (
-          <ContentPanel title={item.label} description={item.description} image={item.image} key={item.slug}>
+          <ContentPanel title={item.label} description={item.description} key={item.slug}>
             <div className="tag-list">
               {item.items.map((tag) => (
                 <span className="tag" key={tag}>

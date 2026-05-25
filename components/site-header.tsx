@@ -31,8 +31,8 @@ export function SiteHeader() {
             </div>
           ))}
         </nav>
-        <Link className="cta" href="/solutions/instant-quote#upload-drawing">
-          Get Instant Quote
+        <Link className="cta" href="/solutions/collaboration">
+          Become a Supplier
           <Send aria-hidden size={15} />
         </Link>
       </div>

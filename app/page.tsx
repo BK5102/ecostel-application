@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Factory, ShieldCheck, Workflow } from "lucide-react";
 import { DrawingUpload } from "@/components/drawing-upload";
-import factoryAerial from "@/src/assets/factory-aerial.jpg";
 import heroPart from "@/src/assets/hero-part.jpg";
 import { capabilities, industries, solutions } from "@/lib/site-content";
 
@@ -12,9 +11,9 @@ export default function HomePage() {
       <section className="hero">
         <div>
           <div className="eyebrow">Manufacturing as an on-demand system layer</div>
-          <h1>Structured matter from structured data.</h1>
+          <h1>Reshaping the Future of Sustainable Manufacturing</h1>
           <p className="lead">
-            Reliable 3D printing infrastructure for prototyping, testing, and scaled production workflows.
+            Precision, Sustainability, and Innovation Combined
           </p>
           <div className="hero-actions">
             <Link className="cta" href="/solutions/instant-quote#upload-drawing">
@@ -32,9 +31,20 @@ export default function HomePage() {
         <div className="section-heading">
           <div>
             <div className="eyebrow">Capabilities</div>
-            <h2>Reliable production workflows.</h2>
+            <h2>Capabilities</h2>
+            <p className="section-copy">
+              Built on advanced manufacturing infrastructure with reliable delivery and reduced operational friction.
+            </p>
+            <p className="section-copy">Structured matter from structured data.</p>
           </div>
         </div>
+        <Image
+          className="capability-process-image"
+          src="/notion-assets/manufacturing-parts-only.png"
+          alt="3D printing manufacturing process parts"
+          width={1415}
+          height={520}
+        />
         <div className="grid three">
           {capabilities.slice(0, 6).map((item) => (
             <Link className="card" href={`/capabilities/${item.slug}`} key={item.slug}>
@@ -61,10 +71,10 @@ export default function HomePage() {
         </div>
         <Image
           className="clients-image"
-          src="/notion-assets/page-03-image-01.png"
+          src="/notion-assets/client-logos-only.png"
           alt="Ecostel client logos from the platform document"
-          width={1536}
-          height={300}
+          width={1200}
+          height={160}
         />
       </section>
 
@@ -91,10 +101,7 @@ export default function HomePage() {
       </section>
 
       <section className="section">
-        <div className="hero-media">
-          <Image src={factoryAerial} alt="Modern manufacturing facility" />
-        </div>
-        <div className="section-heading" style={{ marginTop: 28 }}>
+        <div className="section-heading">
           <div>
             <div className="eyebrow">Industries</div>
             <h2>Built for teams that can&apos;t afford delays.</h2>
