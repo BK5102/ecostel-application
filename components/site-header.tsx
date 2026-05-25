@@ -31,7 +31,7 @@ export function SiteHeader() {
             </div>
           ))}
         </nav>
-        <Link className="cta" href="/solutions/collaboration">
+        <Link className="cta" href="/for-vendors">
           Become a Supplier
           <Send aria-hidden size={15} />
         </Link>

@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Factory, ShieldCheck, Workflow } from "lucide-react";
+import { ArrowRight, Factory, FileCheck2, Route, ShieldCheck, Workflow } from "lucide-react";
 import { DrawingUpload } from "@/components/drawing-upload";
 import heroPart from "@/src/assets/hero-part.jpg";
-import { capabilities, industries, solutions } from "@/lib/site-content";
+import { capabilities, industries, marketplaceFlows, solutions } from "@/lib/site-content";
 
 export default function HomePage() {
   return (
@@ -95,6 +95,41 @@ export default function HomePage() {
                 <h3>{item.label}</h3>
                 <p>{item.description}</p>
               </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-heading">
+          <div>
+            <div className="eyebrow">Marketplace workflow</div>
+            <h2>From RFQ intake to supplier decision.</h2>
+            <p className="section-copy">
+              The platform is designed around buyers, vendors, and Ecostel admins working from the same source of truth.
+            </p>
+          </div>
+        </div>
+        <div className="workflow-grid">
+          {marketplaceFlows.map((flow, index) => {
+            const icons = [FileCheck2, Factory, Route];
+            const Icon = icons[index] ?? FileCheck2;
+            return (
+              <article className="workflow-card" key={flow.label}>
+                <div className="workflow-icon">
+                  <Icon aria-hidden size={22} />
+                </div>
+                <span>{flow.label}</span>
+                <h3>{flow.title}</h3>
+                <p>{flow.description}</p>
+                <div className="tag-list">
+                  {flow.details.map((detail) => (
+                    <span className="tag" key={detail}>
+                      {detail}
+                    </span>
+                  ))}
+                </div>
+              </article>
             );
           })}
         </div>

@@ -34,6 +34,8 @@ export function SiteFooter() {
               <Link href="/capabilities/sheet-tube-fabrication">Sheet Metal and Tube Fabrication</Link>
               <Link href="/solutions/quality-management">Value Added Solutions</Link>
               <Link href="/solutions/instant-quote#upload-drawing">Contact</Link>
+              <Link href="/for-vendors">Become a Supplier</Link>
+              <Link href="/contact">Support</Link>
               <Link href="/resources/articles">Blog</Link>
             </nav>
           </section>

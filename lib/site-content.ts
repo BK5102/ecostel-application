@@ -229,6 +229,37 @@ export const resources = [
   },
 ];
 
+export const marketplaceFlows = [
+  {
+    label: "Buyer RFQ",
+    title: "Upload a part package and submit an RFQ",
+    description:
+      "Buyers can capture material, finish, tolerance, quantity, and lead-time priority before Ecostel routes the work to vetted suppliers.",
+    details: ["CAD, drawing, and BOM inputs", "Draft and submit states", "Admin routing queue"],
+  },
+  {
+    label: "Vendor Workspace",
+    title: "Review assigned RFQs and submit quotes",
+    description:
+      "Approved vendors receive matched RFQs, review part specs, and submit price, lead time, MOQ, shipping, and clarifying notes.",
+    details: ["RFQ queue", "Quote draft and submit", "Order milestone updates"],
+  },
+  {
+    label: "Buyer Decision",
+    title: "Compare quotes and issue a PO",
+    description:
+      "Buyers compare supplier options side by side using price, lead time, MOQ, certifications, and vendor performance signals.",
+    details: ["Quote comparison", "Recommended supplier badge", "PO confirmation flow"],
+  },
+];
+
+export const vendorApplicationSteps = [
+  "Business identity and GST details",
+  "Capability, material, lot-size, and lead-time declaration",
+  "Certification and business document uploads",
+  "Admin review within 2 business days",
+];
+
 export const aboutContent: PageContent = {
   title: "Built for teams that can't afford delays.",
   eyebrow: "About us",
