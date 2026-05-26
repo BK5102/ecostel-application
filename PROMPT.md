@@ -18,6 +18,9 @@ You are developing EcoStel, a manufacturing platform for teams that need faster 
 - Page descriptions and marketing copy should come from the provided Notion/PDF platform document, trimmed only for relevance and clarity.
 - The top-right navbar CTA should be "Become a Supplier".
 - The Get Instant Quote flow should ask the user to upload a drawing or CAD file.
+- The Solutions page should use `Solutions` as the page header and place a `Get Instant Quote` CTA directly below the hero description.
+- The Solutions page should be structured as four Instant Quote sections: `Quote with Speed and Clarity`, `Get Accurate Quotes Easily`, `Long-Term Production Planning`, and `Compare Options Easily`.
+- The fourth Solutions section should include real supplier comparison columns with clickable `Select Supplier` buttons, not image-only text.
 - The landing page hero should use:
   - "Reshaping the Future of Sustainable Manufacturing"
   - "Precision, Sustainability, and Innovation Combined"
@@ -42,7 +45,10 @@ You are developing EcoStel, a manufacturing platform for teams that need faster 
 - Capability cards and capability detail boxes should not include large images inside the box; keep those boxes focused on title, description, and process tags.
 - The Capabilities intro should use the line from the image: "Built on advanced manufacturing infrastructure with reliable delivery and reduced operational friction."
 - Directly below that Capabilities intro sentence, add "Structured matter from structured data." using the same font size, style, and color as the intro text.
-- Include 3D printing materials information on the Capabilities page using the extracted materials/download visual.
+- Include a Quality Systems section on the Capabilities page with the exact documentation text from the provided source image.
+- Include a separate 3D printing materials download box on the Capabilities page using the supplied `3D_Printing_Materials.pdf`.
+- Include a Buyer Protection section on the Capabilities page with extracted text and a cropped parts image beside it.
+- Industries section boxes should be text-only: show each industry header and description, with no images inside the boxes.
 
 ## Source Copy
 
@@ -57,6 +63,23 @@ Use these phrases and descriptions as the canonical source:
 - "Quote with Speed and Clarity."
 - "Our team checks your design and shares useful feedback, so you can decide quickly and move forward without delays."
 - "Upload your parts and get fast, reliable quotes powered by experts and AI, with easy comparison to choose the best price."
+- "Long-Term Production Planning"
+- "We plan repeat orders ahead keeping production smooth and predictable."
+- "Compare Options Easily"
+- "Find different prices and delivery times in one place, so you can choose the best option from trusted partners without the hassle."
+- "Production Verified. Documentation Included."
+- "Certificate of Conformance"
+- "First Article Inspection"
+- "CMM)"
+- "Material Test Reports"
+- "Material Certifications"
+- "RoHS Compliance"
+- "Download our extensive list of available 3D Printing materials"
+- "Need something beyond the catalog? We'll source it for you."
+- "Buyer Protection"
+- "From prototype to production, every part moves through verified manufacturing workflows built for speed, quality, and reliability."
+- "Ecostel combines certified systems with production-ready manufacturing partners to deliver predictable outcomes at scale."
+- "Ecostel Buyer Protection"
 - "Work closely with our team and suppliers in one place. Get DFM feedback early, make better decisions, and build strong relationships you can rely on."
 - "Stay organized with simple tools to track, review, and collaborate so everyone stays on the same page."
 - "Every part meets specifications, with controlled processes and timely delivery."

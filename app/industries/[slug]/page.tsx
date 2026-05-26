@@ -27,7 +27,6 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         <ContentPanel
           title={item.label}
           description="We support industries that shape the future like aerospace, space, medical, and advanced engineering."
-          image={item.image}
         />
       </PageLayout>
     </>

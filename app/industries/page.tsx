@@ -16,7 +16,7 @@ export default function IndustriesPage() {
       />
       <PageLayout items={industries.map((item) => ({ label: item.label, href: `/industries/${item.slug}` }))}>
         {industries.map((item) => (
-          <ContentPanel title={item.label} description={item.description} image={item.image} key={item.slug} />
+          <ContentPanel title={item.label} description={item.description} key={item.slug} />
         ))}
       </PageLayout>
     </>
