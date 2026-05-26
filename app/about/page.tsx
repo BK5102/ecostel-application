@@ -55,7 +55,36 @@ export default function AboutPage() {
           />
         </div>
 
-        {/* 4. How we work — values grid with Privacy as last card */}
+        {/* 4. Backed By */}
+        <section className="backed-by-panel">
+          <p className="backed-by-eyebrow">Backed By</p>
+          <div className="backed-by-card">
+            <div className="backed-by-badge">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+                <rect width="36" height="36" rx="8" fill="#0f8f4d" />
+                <path d="M18 8l2.5 6.5H27l-5.5 4 2 6.5L18 21l-5.5 4 2-6.5L9 14.5h6.5L18 8z" fill="#fff" />
+              </svg>
+              <div>
+                <div className="backed-by-institution">IITM Research Park</div>
+                <div className="backed-by-sub">IIT Madras, Chennai</div>
+              </div>
+            </div>
+            <p className="backed-by-description">
+              EcoStel is proudly backed by <strong>IITM Research Park</strong> — India&rsquo;s first and largest
+              university-based research park, located at IIT Madras. Being part of this ecosystem gives us access to
+              world-class research, deep-tech talent, and a network of industry leaders who are building the future of
+              technology and manufacturing. It&rsquo;s a validation of our mission to make manufacturing smarter,
+              faster, and more reliable for the teams who need it most.
+            </p>
+            <div className="backed-by-trust-row">
+              <span className="backed-by-trust-pill">&#10003;&nbsp; Incubated at IIT Madras</span>
+              <span className="backed-by-trust-pill">&#10003;&nbsp; Deep-tech ecosystem</span>
+              <span className="backed-by-trust-pill">&#10003;&nbsp; Research-backed innovation</span>
+            </div>
+          </div>
+        </section>
+
+        {/* 5. How we work — values grid with Privacy as last card */}
         <section className="content-panel" id="values">
           <h2>We&apos;re not built like a traditional company.</h2>
           <div className="grid two" style={{ marginTop: 18 }} id="privacy">

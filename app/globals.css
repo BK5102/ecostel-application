@@ -734,6 +734,81 @@ a.card:hover,
   margin: 0 0 12px;
 }
 
+.backed-by-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.backed-by-eyebrow {
+  color: var(--brand);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.backed-by-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--brand);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 28px 32px;
+}
+
+.backed-by-badge {
+  align-items: center;
+  display: flex;
+  gap: 14px;
+}
+
+.backed-by-institution {
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.backed-by-sub {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.backed-by-description {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.backed-by-description strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.backed-by-trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.backed-by-trust-pill {
+  background: rgba(15, 143, 77, 0.08);
+  border: 1px solid rgba(15, 143, 77, 0.2);
+  border-radius: 20px;
+  color: var(--brand-dark);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 5px 14px;
+}
+
 .about-full-image {
   border-radius: 10px;
   overflow: hidden;
