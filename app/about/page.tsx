@@ -55,7 +55,20 @@ export default function AboutPage() {
           />
         </div>
 
-        {/* 4. Backed By */}
+        {/* 4. How we work — values grid with Privacy as last card */}
+        <section className="content-panel" id="values">
+          <h2>We&apos;re not built like a traditional company.</h2>
+          <div className="grid two" style={{ marginTop: 18 }} id="privacy">
+            {values.map(([title, description]) => (
+              <div className="card" key={title}>
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* 5. Backed By */}
         <section className="backed-by-panel">
           <p className="backed-by-eyebrow">Backed By</p>
           <div className="backed-by-card">
@@ -81,19 +94,6 @@ export default function AboutPage() {
               <span className="backed-by-trust-pill">&#10003;&nbsp; Deep-tech ecosystem</span>
               <span className="backed-by-trust-pill">&#10003;&nbsp; Research-backed innovation</span>
             </div>
-          </div>
-        </section>
-
-        {/* 5. How we work — values grid with Privacy as last card */}
-        <section className="content-panel" id="values">
-          <h2>We&apos;re not built like a traditional company.</h2>
-          <div className="grid two" style={{ marginTop: 18 }} id="privacy">
-            {values.map(([title, description]) => (
-              <div className="card" key={title}>
-                <h3>{title}</h3>
-                <p>{description}</p>
-              </div>
-            ))}
           </div>
         </section>
       </PageLayout>
