@@ -40,7 +40,7 @@ export function PageLayout({
           </Link>
         ))}
       </aside>
-      <div>{children}</div>
+      <div className="page-content-stack">{children}</div>
     </div>
   );
 }

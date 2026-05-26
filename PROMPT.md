@@ -16,11 +16,15 @@ You are developing EcoStel, a manufacturing platform for teams that need faster 
 - Primary navbar groups are Home, Capabilities, Industries, Solutions, Resource, and About us.
 - Each main navigation group should expose dropdown links that match the platform sitemap.
 - Page descriptions and marketing copy should come from the provided Notion/PDF platform document, trimmed only for relevance and clarity.
+- Detail pages that use sidebar navigation must keep the main content column on a consistent 16px vertical spacing rhythm between all sections, boxes, tables, benefit grids, and CTAs.
 - The top-right navbar CTA should be "Become a Supplier".
 - The Get Instant Quote flow should ask the user to upload a drawing or CAD file.
 - The Solutions page should use `Solutions` as the page header and place a `Get Instant Quote` CTA directly below the hero description.
 - The Solutions page should be structured as four Instant Quote sections: `Quote with Speed and Clarity`, `Get Accurate Quotes Easily`, `Long-Term Production Planning`, and `Compare Options Easily`.
 - The fourth Solutions section should include real supplier comparison columns with clickable `Select Supplier` buttons, not image-only text.
+- Solutions detail pages should place benefit icon grids and final CTA boxes as standalone sections, not nested inside the preceding content box.
+- Project Tracking should include a compact supplier performance table directly below `Monitor Supplier Performance`; it must fit inside the content panel without horizontal scrolling.
+- Project Tracking should include a delivery carrier section below `Manage updates and spending`, using actual linked logo assets where exact brand marks are required.
 - The landing page hero should use:
   - "Reshaping the Future of Sustainable Manufacturing"
   - "Precision, Sustainability, and Innovation Combined"

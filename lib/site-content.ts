@@ -186,11 +186,16 @@ export const solutions = [
     slug: "quality-management",
     label: "Quality Management",
     description: "Every part meets specifications, with controlled processes and timely delivery.",
-    image: "/notion-assets/page-03-image-03.png",
     sections: [
-      { title: "Understand requirements", description: "Ecostel Quality framework covers: Understand requirements." },
-      { title: "Continuous QMS improvement", description: "Continuous QMS improvement." },
-      { title: "Controlled processes", description: "Controlled processes. Consistent output." },
+      {
+        title: "Quality Control & Assurance",
+        description: "Ecostel Quality framework covers:",
+        items: [
+          "Understand requirements.",
+          "Continuous QMS improvement.",
+          "Controlled processes. Consistent output.",
+        ],
+      },
     ],
   },
   {
