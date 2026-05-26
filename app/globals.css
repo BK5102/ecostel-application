@@ -1,15 +1,16 @@
 :root {
   color-scheme: light;
-  --bg: #f6f8f5;
+  /* Brand tokens — locked to Architecture Spec v1.0 */
+  --bg: #f5f8f6;
   --panel: #ffffff;
   --panel-soft: #edf3ed;
-  --ink: #142018;
+  --ink: #0b1f1a;
   --muted: #5b6c61;
   --line: #d9e3dc;
-  --brand: #0f8f4d;
-  --brand-dark: #0a5d35;
-  --accent: #26352c;
-  --shadow: 0 24px 70px rgba(20, 32, 24, 0.12);
+  --brand: #0eab6e;
+  --brand-dark: #06513b;
+  --accent: #06513b;
+  --shadow: 0 24px 70px rgba(11, 31, 26, 0.12);
 }
 
 * {
@@ -27,9 +28,7 @@ body {
     var(--bg);
   color: var(--ink);
   font-family:
-    Rubik,
-    "Aktiv Grotesk",
-    Inter,
+    var(--font-rubik),
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
