@@ -21,8 +21,8 @@ export default function AboutPage() {
         {/* 1. Satellite image — comes before the text */}
         <div className="about-full-image">
           <Image
-            src="/notion-assets/page-11-image-02.jpg"
-            alt="Space manufacturing — EcoStel serves aerospace and next-gen technology"
+            src="/notion-assets/page-11-image-01.jpg"
+            alt="Advanced spacecraft manufacturing facility — EcoStel production workflows"
             width={1200}
             height={700}
             priority
@@ -45,11 +45,11 @@ export default function AboutPage() {
           </p>
         </section>
 
-        {/* 3. Capsule manufacturing image — comes after the text */}
+        {/* 3. Satellite image — comes after the text */}
         <div className="about-full-image">
           <Image
-            src="/notion-assets/page-11-image-01.jpg"
-            alt="Advanced spacecraft manufacturing facility — EcoStel production workflows"
+            src="/notion-assets/page-11-image-02.jpg"
+            alt="Space manufacturing — EcoStel serves aerospace and next-gen technology"
             width={1200}
             height={700}
           />
