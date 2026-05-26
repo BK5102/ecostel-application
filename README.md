@@ -1,6 +1,6 @@
 # EcoStel — Manufacturing Platform
 
-EcoStel is a manufacturing platform for teams that need faster quoting, clearer supplier collaboration, project tracking, and reliable execution from prototype to production.
+EcoStel is a manufacturing startup for teams that need faster quoting, clearer supplier collaboration, project tracking, and reliable execution from prototype to production.
 
 ---
 
