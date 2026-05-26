@@ -727,48 +727,17 @@ a.card:hover,
   margin: 24px 0 0;
 }
 
-.about-hero-image-wrap {
-  border-radius: 12px;
-  overflow: hidden;
-  width: 100%;
-}
-
-.about-hero-image {
-  display: block;
-  height: auto;
-  object-fit: cover;
-  width: 100%;
-}
-
-.why-ecostel-panel {
-  background: #0f1a12;
-  border-radius: 12px;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 40px;
-}
-
-.why-ecostel-panel h2 {
-  color: #fff;
-  font-size: clamp(24px, 3vw, 34px);
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  margin: 0;
-}
-
-.why-ecostel-panel p {
-  color: rgba(255, 255, 255, 0.82);
-  font-size: clamp(15px, 1.5vw, 18px);
+.about-body {
+  color: var(--muted);
+  font-size: 16px;
   line-height: 1.7;
-  margin: 0;
+  margin: 0 0 12px;
 }
 
-.why-ecostel-image {
+.about-inline-image {
   border-radius: 8px;
   height: auto;
-  margin-top: 8px;
+  margin-top: 16px;
   object-fit: cover;
   width: 100%;
 }

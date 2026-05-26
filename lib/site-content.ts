@@ -324,6 +324,7 @@ export const values = [
   ["Technology-Driven", "We leverage technology to simplify, scale, and deliver better outcomes."],
   ["Built for Impact", "We support industries that shape the future like aerospace, space, medical, and advanced engineering."],
   ["Think Independently. Fix What's Broken", "We don't follow things just because that's how it's done. If something isn't working, we speak up and take action."],
+  ["Privacy", "We treat your data with care and respect. It belongs to you, not us. We keep your information safe, use it only when needed, and never share it without your permission."],
 ];
 
 export const navGroups: NavGroup[] = [
