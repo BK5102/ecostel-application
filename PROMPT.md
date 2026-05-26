@@ -109,13 +109,13 @@ Use these phrases and descriptions as the canonical source:
 - Buyer workspace — `/buyer` dashboard (live RFQ counts + recent list from Supabase), sticky sidebar with nav + user profile + sign-out.
 - RFQ submission — `/buyer/rfq/new`: title, process, due date, part details (name, qty, material, finish, tolerances), CAD/drawing file upload to Supabase Storage (`rfq-files` bucket), inserts `rfqs` + `rfq_parts` rows, sets status to `submitted`.
 - Document tech stack corrected — Architecture Spec, Build Plan, and Requirements Contract `.docx` files updated to reflect Next.js / Node.js / Supabase / Vercel (removed NestJS, AWS ECS, S3, Redis, BullMQ, OpenSearch, Docker, ClamAV).
+- RFQ detail page — `/buyer/rfqs/[id]`: part specs, CAD download links, quote list, 5-step status timeline, details sidebar.
+- Vendor registration flow — `/vendor/register` (3-step: company → capabilities → documents) + `/vendor/pending` confirmation page; upserts vendor_profiles, inserts capabilities/certifications, uploads docs to `vendor-docs` bucket, sets kyc_status to pending.
+- Admin panel — `/admin` dashboard (live counts), `/admin/rfqs` (RFQ triage with vendor assignment dropdown, updates rfq status to in_review), `/admin/vendors` (approve/reject vendor applications); admin layout gate-checks org type = admin.
 
 **Phase 1 remaining:**
-- RFQ detail page — `/buyer/rfqs/[id]`: show part specs, uploaded files, status timeline, and assigned quotes.
-- Vendor registration flow — `/vendor/register` or on-boarding from `/for-vendors`: org creation, capability declaration, document upload, pending-approval state.
-- Admin RFQ triage — `/admin/rfqs`: list of submitted RFQs, assign to vendors, approve vendor registrations.
-- End-to-end test — buyer signup → RFQ submission → admin sees it (Phase 1 quality gate).
-- Supabase Storage bucket setup — create `rfq-files` private bucket with policy: only the owning buyer org can upload; signed URLs for read access.
+- Supabase Storage bucket setup — create `rfq-files` and `vendor-docs` private buckets in Supabase dashboard; fill `.env.local` with real project credentials.
+- End-to-end test — buyer signup → RFQ submission → admin sees it and assigns a vendor (Phase 1 quality gate).
 
 **Phase 2 (not started):** Vendor dashboards, quote submission, buyer quote comparison, PO acceptance, threaded messaging, email notifications.
 
