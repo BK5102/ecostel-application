@@ -18,7 +18,18 @@ export default function AboutPage() {
           { label: "Privacy", href: "#privacy" },
         ]}
       >
-        {/* Why Ecostel? */}
+        {/* 1. Satellite image — comes before the text */}
+        <div className="about-full-image">
+          <Image
+            src="/notion-assets/page-11-image-02.jpg"
+            alt="Space manufacturing — EcoStel serves aerospace and next-gen technology"
+            width={1200}
+            height={700}
+            priority
+          />
+        </div>
+
+        {/* 2. Why Ecostel? text */}
         <section className="content-panel">
           <h2>Why Ecostel?</h2>
           <p className="about-body">
@@ -32,16 +43,19 @@ export default function AboutPage() {
             manufacturing partners and full ownership of delivery, we ensure faster turnaround, complete visibility, and
             reliable outcomes from prototype to production.
           </p>
-          <Image
-            src="/notion-assets/page-11-image-01.jpg"
-            alt="EcoStel manufacturing team"
-            width={1200}
-            height={600}
-            className="about-inline-image"
-          />
         </section>
 
-        {/* How we work — values grid with Privacy as last card */}
+        {/* 3. Capsule manufacturing image — comes after the text */}
+        <div className="about-full-image">
+          <Image
+            src="/notion-assets/page-11-image-01.jpg"
+            alt="Advanced spacecraft manufacturing facility — EcoStel production workflows"
+            width={1200}
+            height={700}
+          />
+        </div>
+
+        {/* 4. How we work — values grid with Privacy as last card */}
         <section className="content-panel" id="values">
           <h2>We&apos;re not built like a traditional company.</h2>
           <div className="grid two" style={{ marginTop: 18 }} id="privacy">

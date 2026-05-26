@@ -734,10 +734,15 @@ a.card:hover,
   margin: 0 0 12px;
 }
 
-.about-inline-image {
-  border-radius: 8px;
+.about-full-image {
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.about-full-image img {
+  display: block;
   height: auto;
-  margin-top: 16px;
   object-fit: cover;
   width: 100%;
 }
