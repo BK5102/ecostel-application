@@ -228,7 +228,6 @@ export const resources = [
     slug: "webinar",
     label: "Webinar",
     description: "Future sessions for manufacturing teams and product builders.",
-    image: "/notion-assets/page-10-image-04.png",
   },
 ];
 
