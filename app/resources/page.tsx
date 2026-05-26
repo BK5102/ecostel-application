@@ -41,7 +41,7 @@ export default function ResourcesPage() {
               </div>
             </section>
           ) : (
-            <ContentPanel title={item.label} description={item.description} image={item.image} key={item.slug} />
+            <ContentPanel title={item.label} description={item.description} key={item.slug} />
           )
         )}
       </PageLayout>

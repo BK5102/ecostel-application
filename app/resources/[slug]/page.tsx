@@ -53,7 +53,7 @@ export default async function ResourcePage({ params }: { params: Promise<{ slug:
             </div>
           </section>
         ) : (
-          <ContentPanel title={item.label} description={item.description} image={item.image} />
+          <ContentPanel title={item.label} description={item.description} />
         )}
       </PageLayout>
     </>
