@@ -316,14 +316,14 @@ export const aboutContent: PageContent = {
 
 export const values = [
   ["We Move Fast", "We trust those closest to the work to make the right calls, removing bottlenecks and enabling faster, more effective execution."],
-  ["We hire for Attitude", "Skills can be taught attitude cannot. We work with people who take ownership, stay curious, and show the drive to solve problems."],
+  ["We hire for Attitude", "Skills can be taught attitude cannot. We work with people who take ownership, stay curious, and show the drive to solve problems. The right mindset builds stronger teams, adapts faster, and consistently delivers better outcomes."],
   ["Performance over Presence", "We focus on outcomes, not hours. You're trusted to manage your time and deliver results. Ownership and accountability matter more than being seen."],
   ["Transparency", "We keep things open and clear. Everyone understands what's happening, what's working, and what needs to improve so we can make better decisions together."],
   ["Ship Fast. Improve Faster.", "We move forward and learn as we go. Instead of waiting for perfect, we launch, gather feedback, and continuously improve."],
   ["Customer First", "We put the customer first in everything we do. We respond quickly, understand their needs, and focus on doing the job right, so they can rely on us every time."],
   ["Technology-Driven", "We leverage technology to simplify, scale, and deliver better outcomes."],
-  ["Built for Impact", "We support industries that shape the future like aerospace, space, medical, and advanced engineering."],
-  ["Think Independently. Fix What's Broken", "We don't follow things just because that's how it's done. If something isn't working, we speak up and take action."],
+  ["Built for Impact", "We support industries that shape the future like aerospace, space, medical, and advanced engineering. Our goal is not just to make parts, but to help build products that solve real problems and create lasting value."],
+  ["Think Independently. Fix What's Broken", "We don't follow things just because \"that's how it's done.\" If something isn't working, we speak up and take action. Everyone is responsible for improving things not waiting for someone else to fix it."],
   ["Privacy", "We treat your data with care and respect. It belongs to you, not us. We keep your information safe, use it only when needed, and never share it without your permission."],
 ];
 
