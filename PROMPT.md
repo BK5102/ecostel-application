@@ -119,6 +119,29 @@ Use these phrases and descriptions as the canonical source:
 
 **Phase 2 (not started):** Vendor dashboards, quote submission, buyer quote comparison, PO acceptance, threaded messaging, email notifications.
 
+## Deployment
+
+### Vercel — marketing skeleton (no Supabase required)
+
+The Supabase env vars are `.optional()` in `lib/env.ts`, so the build succeeds without real credentials. All marketing routes work. Auth/workspace routes render but are non-functional until real credentials are wired.
+
+**Steps (browser only, no CLI):**
+1. Sign in to vercel.com with GitHub
+2. Import repo `BK5102/ecostel-application`
+3. Framework: Next.js (auto-detected)
+4. Add env vars:
+   - `NEXT_PUBLIC_SUPABASE_URL` = `https://placeholder.supabase.co`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY` = `placeholder`
+   - `SUPABASE_SERVICE_ROLE_KEY` = `placeholder`
+   - `NEXT_PUBLIC_SITE_URL` = *(leave blank — Vercel sets this automatically)*
+5. Deploy
+
+### Activating the full platform
+
+Replace placeholder env vars in **Vercel → Project → Settings → Environment Variables** with real Supabase credentials, then redeploy. Also required:
+- Run `supabase/migrations/001_initial_schema.sql` then `002_rls_policies.sql` in Supabase SQL editor
+- Create private Storage buckets: `rfq-files` and `vendor-docs`
+
 ## Security Requirements
 
 - Treat customer files, CAD data, quotes, supplier details, and order status as confidential.
