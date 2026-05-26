@@ -60,12 +60,12 @@ export function ContentPanel({
 }) {
   return (
     <section className="content-panel">
-      {image ? (
-        <Image className="panel-image" src={image} alt={imageAlt ?? title} width={1200} height={800} />
-      ) : null}
       <h2>{title}</h2>
       <p>{description}</p>
       {children}
+      {image ? (
+        <Image className="panel-image" src={image} alt={imageAlt ?? title} width={1200} height={800} />
+      ) : null}
     </section>
   );
 }

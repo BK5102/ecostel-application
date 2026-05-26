@@ -4,10 +4,10 @@ You are developing EcoStel, a manufacturing platform for teams that need faster 
 
 ## Non-Negotiable Stack
 
-- Use Next.js App Router for the frontend.
-- Use FastAPI for backend APIs, file upload validation, quote workflow orchestration, and future CAD/AI services.
+- Use Next.js App Router for the frontend and backend API routes (Node.js runtime).
+- Use Node.js for all server-side logic — Next.js API routes handle validation, orchestration, file handling, and integrations.
 - Use Supabase for Auth, PostgreSQL, Storage, Realtime where useful, and Row Level Security.
-- Deploy the frontend on Vercel with preview deployments for every pull request.
+- Deploy on Vercel with preview deployments for every pull request. Supabase manages the database and backend services.
 
 ## Product Direction
 
@@ -89,6 +89,35 @@ Use these phrases and descriptions as the canonical source:
 - "Every part meets specifications, with controlled processes and timely delivery."
 - "Built for teams that can't afford delays."
 - "We work with teams building the next generation of products. Join us in making manufacturing faster, smarter, and more reliable."
+
+## Build Status
+
+### Phase 1 — Foundation
+
+**Completed:**
+- Marketing site — all pages live: Home, Capabilities (+ slug), Industries (+ slug), Solutions (+ slug), Resources (+ slug), About, Contact, For Vendors.
+- Brand system locked — Rubik font via `next/font/google`, CSS custom properties (`--brand`, `--brand-dark`, `--bg`, `--ink`, `--shadow`, `--line`), favicon, logo.
+- SEO — `metadataBase`, OpenGraph, Twitter card, robots metadata. Lighthouse SEO = 100.
+- Security headers — CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy in `next.config.ts`.
+- Rate limiting — 120 req/min per IP on all `/api/*` routes via `middleware.ts`.
+- Supabase client — `lib/supabase/client.ts` (browser) and `lib/supabase/server.ts` (SSR) with Zod-validated env in `lib/env.ts`.
+- Database schema — `supabase/migrations/001_initial_schema.sql`: 18 tables covering organizations, users, vendor profiles, RFQs, quotes, orders, messages, audit log, notifications.
+- RLS policies — `supabase/migrations/002_rls_policies.sql`: RLS enabled on all tables with `current_org_id()` / `current_org_type()` helper functions; buyers see own data, vendors see assigned RFQs only, admins see all.
+- Auth middleware — `middleware.ts` refreshes Supabase session on every request; redirects unauthenticated users from `/buyer/*`, `/vendor/*`, `/admin/*` to `/auth/login`.
+- Auth pages — `/auth/login`, `/auth/signup` (with buyer/vendor role selection), `/auth/verify-email`, `/auth/reset-password`, `/auth/update-password`.
+- Auth API routes — `/api/auth/callback` (PKCE code exchange), `/api/auth/signout`.
+- Buyer workspace — `/buyer` dashboard (live RFQ counts + recent list from Supabase), sticky sidebar with nav + user profile + sign-out.
+- RFQ submission — `/buyer/rfq/new`: title, process, due date, part details (name, qty, material, finish, tolerances), CAD/drawing file upload to Supabase Storage (`rfq-files` bucket), inserts `rfqs` + `rfq_parts` rows, sets status to `submitted`.
+- Document tech stack corrected — Architecture Spec, Build Plan, and Requirements Contract `.docx` files updated to reflect Next.js / Node.js / Supabase / Vercel (removed NestJS, AWS ECS, S3, Redis, BullMQ, OpenSearch, Docker, ClamAV).
+
+**Phase 1 remaining:**
+- RFQ detail page — `/buyer/rfqs/[id]`: show part specs, uploaded files, status timeline, and assigned quotes.
+- Vendor registration flow — `/vendor/register` or on-boarding from `/for-vendors`: org creation, capability declaration, document upload, pending-approval state.
+- Admin RFQ triage — `/admin/rfqs`: list of submitted RFQs, assign to vendors, approve vendor registrations.
+- End-to-end test — buyer signup → RFQ submission → admin sees it (Phase 1 quality gate).
+- Supabase Storage bucket setup — create `rfq-files` private bucket with policy: only the owning buyer org can upload; signed URLs for read access.
+
+**Phase 2 (not started):** Vendor dashboards, quote submission, buyer quote comparison, PO acceptance, threaded messaging, email notifications.
 
 ## Security Requirements
 
