@@ -2364,3 +2364,144 @@ a.card:hover,
   white-space: nowrap;
   width: 1px;
 }
+
+/* ── Admin styles ──────────────────────────────────────────── */
+.admin-rfq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 880px;
+}
+
+.admin-rfq-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 18px;
+}
+
+.admin-rfq-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-rfq-info small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.admin-rfq-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* assign dropdown */
+.assign-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  min-width: 200px;
+  z-index: 50;
+  overflow: hidden;
+}
+
+.assign-dropdown-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 9px 14px;
+  font-size: 13px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+.assign-dropdown-item:hover {
+  background: var(--bg);
+}
+
+/* vendor cards */
+.admin-vendor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 720px;
+}
+
+.admin-vendor-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 20px;
+}
+
+.admin-vendor-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.admin-vendor-card-header strong {
+  display: block;
+  font-size: 15px;
+}
+
+.admin-vendor-card-header small {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 2px;
+  display: block;
+}
+
+.admin-vendor-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.tag {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--ink);
+  font-size: 12px;
+  padding: 2px 8px;
+}
+
+.tag-cert {
+  background: #e6f7f1;
+  border-color: #b3e6d3;
+  color: var(--brand-dark);
+}
+
+/* stat-card link */
+.stat-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--brand);
+  text-decoration: none;
+  margin-top: 4px;
+}
+
+.stat-link:hover {
+  text-decoration: underline;
+}
