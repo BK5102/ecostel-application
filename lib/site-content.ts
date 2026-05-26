@@ -311,11 +311,6 @@ export const aboutContent: PageContent = {
       description:
         "Our platform brings quoting, communication, and execution into one place. With vetted manufacturing partners and full ownership of delivery, we ensure faster turnaround, complete visibility, and reliable outcomes from prototype to production.",
     },
-    {
-      title: "Infrastructure modern manufacturing has been missing",
-      description:
-        "We're building the infrastructure modern manufacturing has been missing and we're aiming for Mars.",
-    },
   ],
 };
 
@@ -329,7 +324,6 @@ export const values = [
   ["Technology-Driven", "We leverage technology to simplify, scale, and deliver better outcomes."],
   ["Built for Impact", "We support industries that shape the future like aerospace, space, medical, and advanced engineering."],
   ["Think Independently. Fix What's Broken", "We don't follow things just because that's how it's done. If something isn't working, we speak up and take action."],
-  ["Privacy", "We treat your data with care and respect. It belongs to you, not us."],
 ];
 
 export const navGroups: NavGroup[] = [
