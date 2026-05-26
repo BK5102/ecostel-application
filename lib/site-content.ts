@@ -218,19 +218,50 @@ export const resources = [
     slug: "case-studies",
     label: "Case Studies",
     description: "Built for teams that can't afford delays.",
-    image: "/notion-assets/page-10-image-03.png",
   },
   {
     slug: "articles",
     label: "Articles",
     description: "Engineering and manufacturing notes from Ecostel.",
-    image: "/notion-assets/page-10-image-02.png",
   },
   {
     slug: "webinar",
     label: "Webinar",
     description: "Future sessions for manufacturing teams and product builders.",
     image: "/notion-assets/page-10-image-04.png",
+  },
+];
+
+export const linkedInArticles = [
+  {
+    title: "Most Tolerance Issues Start Much Earlier Than You Think",
+    summary: "Why tolerance stack-ups fail at the design stage — and how catching them early saves time, cost, and rework on the floor.",
+    tag: "Design for Manufacturing",
+    href: "https://www.linkedin.com/posts/ecostel-engineering_most-tolerance-issues-start-much-earlier-activity-7451924232730595330-DLLx?utm_source=share&utm_medium=member_desktop&rcm=ACoAACdoZn4BegUlAxQQXt58YyzALs9ymzP5dag",
+  },
+  {
+    title: "The Smarter Factory Isn't Just Coming — It's Here",
+    summary: "How automation, data, and connected supply chains are reshaping what modern manufacturing actually looks like today.",
+    tag: "Industry Insight",
+    href: "https://www.linkedin.com/pulse/smarter-factory-isnt-just-coming-ecostel-engineering-issvc/?trackingId=g8tJf%2B%2FdHxuu%2BCULnzlBDg%3D%3D",
+  },
+  {
+    title: "Bridging the Gap Between Engineering and Production",
+    summary: "The handoff between design and manufacturing is where quality breaks down. Here's how EcoStel closes that gap.",
+    tag: "Production Workflow",
+    href: "https://www.linkedin.com/posts/ecostel-engineering_activity-7287687941655605248-kwOj?utm_source=share&utm_medium=member_desktop&rcm=ACoAACdoZn4BegUlAxQQXt58YyzALs9ymzP5dag",
+  },
+  {
+    title: "Building Reliable Supply Chains for Hardware Teams",
+    summary: "What hardware startups and NPD teams need from their manufacturing partners — and why predictability beats price every time.",
+    tag: "Supply Chain",
+    href: "https://www.linkedin.com/article/edit/7282015543467954176/?author=urn%3Ali%3Acompany%3A104792557",
+  },
+  {
+    title: "Are You a Designer or NPD Engineer? Read This First.",
+    summary: "Before you send your next file for quoting, make sure your design is production-ready. A practical checklist from the EcoStel team.",
+    tag: "NPD & Prototyping",
+    href: "https://www.linkedin.com/posts/ecostel-engineering_are-you-a-designer-or-npd-engineer-looking-activity-7272949210415534080-EYSZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAACdoZn4BegUlAxQQXt58YyzALs9ymzP5dag",
   },
 ];
 
