@@ -114,6 +114,7 @@ Use these phrases and descriptions as the canonical source:
 - Admin panel — `/admin` dashboard (live counts), `/admin/rfqs` (RFQ triage with vendor assignment dropdown, updates rfq status to in_review), `/admin/vendors` (approve/reject vendor applications); admin layout gate-checks org type = admin.
 
 - Vercel build fix — `useSearchParams()` in `/auth/login` wrapped in `<Suspense>` (Next.js 15 prerender requirement).
+- Sidebar nav removed from all 11 content pages — `PageLayout` no longer renders the `<aside>` list; content boxes expand to full width across capabilities, industries, solutions, resources, about, contact, for-vendors and their slug pages.
 
 **Phase 1 remaining:**
 - Supabase Storage bucket setup — create `rfq-files` and `vendor-docs` private buckets in Supabase dashboard; fill `.env.local` with real project credentials.
