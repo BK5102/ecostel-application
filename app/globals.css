@@ -1289,7 +1289,6 @@ a.card:hover,
 }
 
 .solution-benefit-card {
-  border: 1px solid var(--line);
   border-radius: 8px;
   padding: 24px;
   text-align: center;

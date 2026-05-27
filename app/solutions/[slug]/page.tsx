@@ -7,6 +7,21 @@ import { ContentPanel, PageHero, PageLayout } from "@/components/page-shell";
 import { QuoteComparison } from "@/components/quote-comparison";
 import { findBySlug, solutions } from "@/lib/site-content";
 
+const instantQuoteBenefits = [
+  {
+    title: "Built for Complex Projects",
+    description: "Made for parts with many variations and smaller quantities where flexibility is important.",
+  },
+  {
+    title: "Works with Your Files",
+    description: "Use drawings, CAD files, and BOMs easily important details are picked up automatically.",
+  },
+  {
+    title: "Talk Directly to Suppliers",
+    description: "Communicate straight with manufacturing partners no middle steps, faster and clearer.",
+  },
+];
+
 const collaborationBenefits = [
   {
     title: "Safe & Secure",
@@ -142,6 +157,30 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
           {item.slug === "instant-quote" ? <QuoteComparison /> : null}
         </ContentPanel>
         {item.slug === "instant-quote" ? <DrawingUpload /> : null}
+        {item.slug === "instant-quote" ? (
+          <>
+            <section className="solution-benefits-panel">
+              <div className="solution-benefits-grid">
+                {instantQuoteBenefits.map((benefit) => (
+                  <article className="solution-benefit-card" key={benefit.title}>
+                    <span className="solution-benefit-icon">
+                      <ThumbsUp aria-hidden size={18} />
+                    </span>
+                    <h3>{benefit.title}</h3>
+                    <p>{benefit.description}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+            <section className="content-panel solution-final-cta">
+              <h2>Free to start. Pay only when you buy parts.</h2>
+              <Link className="cta" href="#upload-drawing">
+                Get Instant Quote
+                <ArrowRight aria-hidden size={16} />
+              </Link>
+            </section>
+          </>
+        ) : null}
         {item.sections.map((section) => (
           <div className="solution-section-stack" key={section.title}>
             <ContentPanel

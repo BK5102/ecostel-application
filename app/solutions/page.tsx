@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ThumbsUp } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { QuoteComparison } from "@/components/quote-comparison";
 import { PageHero, PageLayout } from "@/components/page-shell";
 import { solutions } from "@/lib/site-content";
@@ -31,21 +31,6 @@ const instantQuoteSections = [
   },
 ];
 
-const solutionBenefits = [
-  {
-    title: "Built for Complex Projects",
-    description: "Made for parts with many variations and smaller quantities where flexibility is important.",
-  },
-  {
-    title: "Works with Your Files",
-    description: "Use drawings, CAD files, and BOMs easily important details are picked up automatically.",
-  },
-  {
-    title: "Talk Directly to Suppliers",
-    description: "Communicate straight with manufacturing partners no middle steps, faster and clearer.",
-  },
-];
-
 export default function SolutionsPage() {
   return (
     <>
@@ -68,26 +53,6 @@ export default function SolutionsPage() {
             {index === 3 ? <QuoteComparison /> : null}
           </section>
         ))}
-        <section className="content-panel solution-benefits-panel">
-          <div className="solution-benefits-grid">
-            {solutionBenefits.map((benefit) => (
-              <article className="solution-benefit-card" key={benefit.title}>
-                <span className="solution-benefit-icon">
-                  <ThumbsUp aria-hidden size={18} />
-                </span>
-                <h3>{benefit.title}</h3>
-                <p>{benefit.description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-        <section className="content-panel solution-final-cta">
-          <h2>Free to start. Pay only when you buy parts.</h2>
-          <Link className="cta" href="/solutions/instant-quote#upload-drawing">
-            Get Instant Quote
-            <ArrowRight aria-hidden size={16} />
-          </Link>
-        </section>
       </PageLayout>
     </>
   );
