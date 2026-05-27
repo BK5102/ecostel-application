@@ -114,6 +114,7 @@ Use these phrases and descriptions as the canonical source:
 - Admin panel — `/admin` dashboard (live counts), `/admin/rfqs` (RFQ triage with vendor assignment dropdown, updates rfq status to in_review), `/admin/vendors` (approve/reject vendor applications); admin layout gate-checks org type = admin.
 
 - Vercel build fix — `useSearchParams()` in `/auth/login` wrapped in `<Suspense>` (Next.js 15 prerender requirement).
+- Footer scaled down — all text sizes, spacing, and padding reduced significantly (headline 48px→24px, links/body 28px→13px, grid gap 64px→32px)
 - Sidebar nav removed from all 11 content pages — `PageLayout` no longer renders the `<aside>` list; content boxes expand to full width across capabilities, industries, solutions, resources, about, contact, for-vendors and their slug pages.
 
 **Phase 1 remaining:**
