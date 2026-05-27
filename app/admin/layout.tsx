@@ -21,13 +21,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
     <div className="buyer-layout">
       <aside className="buyer-sidebar">
         <Link href="/admin" className="buyer-logo" aria-label="EcoStel Admin">
-          <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden>
-            <circle cx="18" cy="18" r="18" fill="#0EAB6E" />
-            <rect x="10" y="10" width="7" height="7" rx="1" fill="white" />
-            <rect x="19" y="10" width="7" height="7" rx="1" fill="white" />
-            <rect x="10" y="19" width="7" height="7" rx="1" fill="white" />
-            <rect x="19" y="19" width="7" height="7" rx="1" fill="white" opacity="0.45" />
-          </svg>
+          <img src="/ecostel-logo.png" alt="EcoStel logo" width={28} height={28} />
           <span>Admin</span>
         </Link>
 
