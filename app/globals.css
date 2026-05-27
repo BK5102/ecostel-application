@@ -453,7 +453,7 @@ a.card:hover,
 .page-layout {
   display: grid;
   gap: 22px;
-  grid-template-columns: 280px minmax(0, 1fr);
+  grid-template-columns: 1fr;
   padding-bottom: 76px;
 }
 

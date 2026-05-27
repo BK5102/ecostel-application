@@ -1,10 +1,10 @@
-import Link from "next/link";
 import Image from "next/image";
 
 type SideItem = {
   label: string;
   href: string;
 };
+// SideItem kept for backwards-compat — items prop accepted but not rendered
 
 export function PageHero({
   eyebrow,
@@ -25,21 +25,13 @@ export function PageHero({
 }
 
 export function PageLayout({
-  items,
   children,
 }: {
-  items: SideItem[];
+  items?: SideItem[];
   children: React.ReactNode;
 }) {
   return (
     <div className="page-layout">
-      <aside className="sidebar">
-        {items.map((item) => (
-          <Link href={item.href} key={item.href}>
-            {item.label}
-          </Link>
-        ))}
-      </aside>
       <div className="page-content-stack">{children}</div>
     </div>
   );
