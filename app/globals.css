@@ -1614,7 +1614,7 @@ a.card:hover,
   color: #fff;
   margin-top: 28px;
   overflow: hidden;
-  padding: 0 24px 74px;
+  padding: 28px 24px 32px;
 }
 
 .footer-inner {
@@ -1624,52 +1624,54 @@ a.card:hover,
 
 .footer-hero h2 {
   color: #fff;
-  font-size: clamp(28px, 3vw, 48px);
+  font-size: clamp(16px, 1.6vw, 24px);
   font-weight: 800;
   letter-spacing: -0.01em;
   line-height: 1.15;
-  margin: 0 0 40px;
+  margin: 0 0 20px;
   max-width: 1800px;
 }
 
 .footer-grid {
   display: grid;
-  gap: 64px;
+  gap: 32px;
   grid-template-columns: 1.25fr 1fr 0.55fr 0.75fr;
 }
 
 .footer-grid h3 {
   color: #fff;
-  font-size: clamp(24px, 2.1vw, 36px);
-  letter-spacing: 0;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   line-height: 1.2;
-  margin: 0 0 42px;
+  margin: 0 0 14px;
 }
 
 .footer-brand h3 {
-  font-size: clamp(30px, 3vw, 48px);
-  font-weight: 900;
-  margin-top: 44px;
+  font-size: clamp(14px, 1.4vw, 20px);
+  font-weight: 800;
+  margin-top: 20px;
   max-width: 440px;
 }
 
 .footer-brand p {
-  color: #fff;
-  font-size: clamp(20px, 1.7vw, 30px);
-  line-height: 1.35;
-  margin: 34px 0 0;
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 10px 0 0;
   max-width: 420px;
 }
 
 .footer-links {
   display: grid;
-  gap: 24px;
+  gap: 10px;
 }
 
 .footer-links a,
 .footer-links span {
-  color: #fff;
-  font-size: clamp(20px, 1.5vw, 28px);
+  color: rgba(255,255,255,0.75);
+  font-size: 13px;
   line-height: 1.25;
 }
 
@@ -1733,11 +1735,11 @@ a.card:hover,
   }
 
   .site-footer {
-    padding-bottom: 46px;
+    padding-bottom: 28px;
   }
 
   .footer-hero h2 {
-    margin-bottom: 32px;
+    margin-bottom: 16px;
   }
 
   .footer-grid {
