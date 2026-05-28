@@ -54,13 +54,6 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
               width={1415}
               height={520}
             />
-            <Image
-              className="buyer-protection-image"
-              src="/notion-assets/buyer-protection-parts.png"
-              alt="Production-ready 3D printed parts"
-              width={620}
-              height={500}
-            />
             <section className="materials-download-panel">
               <h2>Download our extensive list of available 3D Printing materials</h2>
               <a className="materials-download-button" href="/3D_Printing_Materials.pdf" download>
@@ -86,6 +79,12 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
                 </p>
                 <span className="buyer-protection-pill">Ecostel Buyer Protection</span>
               </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                className="buyer-protection-image"
+                src="/notion-assets/buyer-protection-parts.png"
+                alt="Production-ready 3D printed parts"
+              />
             </section>
           </>
         ) : null}

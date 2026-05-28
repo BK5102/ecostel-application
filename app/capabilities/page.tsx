@@ -61,6 +61,12 @@ export default function CapabilitiesPage() {
             </p>
             <span className="buyer-protection-pill">Ecostel Buyer Protection</span>
           </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            className="buyer-protection-image"
+            src="/notion-assets/buyer-protection-parts.png"
+            alt="Production-ready 3D printed parts"
+          />
         </section>
 
         {capabilities.map((item) => (

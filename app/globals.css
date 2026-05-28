@@ -870,12 +870,12 @@ a.card:hover,
 }
 
 .buyer-protection-image {
-  height: auto;
-  max-height: 400px;
-  width: 100%;
-  object-fit: cover;
   border-radius: 8px;
-  object-fit: contain;
+  display: block;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  width: 100%;
   width: min(100%, 480px);
 }
 
