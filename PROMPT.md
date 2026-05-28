@@ -92,38 +92,59 @@ Use these phrases and descriptions as the canonical source:
 
 ## Build Status
 
-### Phase 1 — Foundation
+### Phase 1 — Foundation (code complete)
 
-**Completed:**
-- Marketing site — all pages live: Home, Capabilities (+ slug), Industries (+ slug), Solutions (+ slug), Resources (+ slug), About, Contact, For Vendors.
-- Brand system locked — Rubik font via `next/font/google`, CSS custom properties (`--brand`, `--brand-dark`, `--bg`, `--ink`, `--shadow`, `--line`), favicon, logo.
-- SEO — `metadataBase`, OpenGraph, Twitter card, robots metadata. Lighthouse SEO = 100.
+**Infrastructure**
+- Supabase client — `lib/supabase/client.ts` (browser) and `lib/supabase/server.ts` (SSR) with Zod-validated env in `lib/env.ts`. Supabase env vars are `.optional()` so build succeeds without real credentials.
+- Database schema — `supabase/migrations/001_initial_schema.sql`: 18 tables (organizations, users, vendor_profiles, vendor_capabilities, vendor_certifications, rfqs, rfq_parts, rfq_assignments, quotes, quote_lines, orders, order_milestones, invoices, payouts, messages, activity, notifications).
+- RLS policies — `supabase/migrations/002_rls_policies.sql`: enabled on all 18 tables; `current_org_id()` / `current_org_type()` security-definer helpers; buyers see own data, vendors see assigned RFQs only, admins see all.
+- Auth middleware — `middleware.ts` refreshes session on every request; protects `/buyer/*`, `/vendor/*`, `/admin/*`; redirects unauthenticated to `/auth/login?next=<path>`.
 - Security headers — CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy in `next.config.ts`.
-- Rate limiting — 120 req/min per IP on all `/api/*` routes via `middleware.ts`.
-- Supabase client — `lib/supabase/client.ts` (browser) and `lib/supabase/server.ts` (SSR) with Zod-validated env in `lib/env.ts`.
-- Database schema — `supabase/migrations/001_initial_schema.sql`: 18 tables covering organizations, users, vendor profiles, RFQs, quotes, orders, messages, audit log, notifications.
-- RLS policies — `supabase/migrations/002_rls_policies.sql`: RLS enabled on all tables with `current_org_id()` / `current_org_type()` helper functions; buyers see own data, vendors see assigned RFQs only, admins see all.
-- Auth middleware — `middleware.ts` refreshes Supabase session on every request; redirects unauthenticated users from `/buyer/*`, `/vendor/*`, `/admin/*` to `/auth/login`.
-- Auth pages — `/auth/login`, `/auth/signup` (with buyer/vendor role selection), `/auth/verify-email`, `/auth/reset-password`, `/auth/update-password`.
-- Auth API routes — `/api/auth/callback` (PKCE code exchange), `/api/auth/signout`.
-- Buyer workspace — `/buyer` dashboard (live RFQ counts + recent list from Supabase), sticky sidebar with nav + user profile + sign-out.
-- RFQ submission — `/buyer/rfq/new`: title, process, due date, part details (name, qty, material, finish, tolerances), CAD/drawing file upload to Supabase Storage (`rfq-files` bucket), inserts `rfqs` + `rfq_parts` rows, sets status to `submitted`.
-- Document tech stack corrected — Architecture Spec, Build Plan, and Requirements Contract `.docx` files updated to reflect Next.js / Node.js / Supabase / Vercel (removed NestJS, AWS ECS, S3, Redis, BullMQ, OpenSearch, Docker, ClamAV).
-- RFQ detail page — `/buyer/rfqs/[id]`: part specs, CAD download links, quote list, 5-step status timeline, details sidebar.
-- Vendor registration flow — `/vendor/register` (3-step: company → capabilities → documents) + `/vendor/pending` confirmation page; upserts vendor_profiles, inserts capabilities/certifications, uploads docs to `vendor-docs` bucket, sets kyc_status to pending.
-- Admin panel — `/admin` dashboard (live counts), `/admin/rfqs` (RFQ triage with vendor assignment dropdown, updates rfq status to in_review), `/admin/vendors` (approve/reject vendor applications); admin layout gate-checks org type = admin.
+- Rate limiting — 120 req/min per IP on all `/api/*` routes.
+- `.env.local` template in repo root (gitignored); `.env.local` placeholders used for skeleton Vercel deploy.
 
-- Vercel build fix — `useSearchParams()` in `/auth/login` wrapped in `<Suspense>` (Next.js 15 prerender requirement).
-- "Instant Quote" nav dropdown link appends #upload-drawing so clicking it scrolls directly to the DrawingUpload section
-- Benefit cards ("Built for Complex Projects" etc.) and "Free to start" CTA on /solutions/instant-quote; positioned after "Compare Options Easily"; all borders removed (card borders + CTA content-panel wrapper)
-- Footer scaled down — all text sizes, spacing, and padding reduced significantly (headline 48px→24px, links/body 28px→13px, grid gap 64px→32px)
-- Sidebar nav removed from all 11 content pages — `PageLayout` no longer renders the `<aside>` list; content boxes expand to full width across capabilities, industries, solutions, resources, about, contact, for-vendors and their slug pages.
+**Marketing site**
+- All pages live: Home, Capabilities (+ slug), Industries (+ slug), Solutions (+ slug), Resources (+ slug), About, Contact, For Vendors.
+- Brand system — Rubik via `next/font/google`, CSS custom properties (`--brand #0EAB6E`, `--brand-dark`, `--bg`, `--ink`, `--shadow`, `--line`), favicon.
+- Brand logo — `public/ecostel-logo.png` (white background removed, transparent PNG); all layouts use `<img>` tag, SVG inline fallback removed. Appears in navbar, footer, auth card, buyer sidebar, admin sidebar.
+- SEO — `metadataBase`, OpenGraph, Twitter card, robots metadata.
+- Sidebar nav removed from all 11 content pages — `PageLayout` no longer renders the `<aside>`; content boxes expand to full width.
+- Footer scaled down — headline `clamp(16-24px)`, links/body `13px`, grid gap `32px`, link gap `10px`.
+- Solutions / Instant Quote — benefit cards ("Built for Complex Projects" etc.) and "Free to start" CTA live on `/solutions/instant-quote` after "Compare Options Easily"; card borders and CTA wrapper border removed.
+- "Instant Quote" nav dropdown href → `/solutions/instant-quote#upload-drawing` so page scrolls to DrawingUpload on click (`id="upload-drawing"` already on the component).
 
-**Phase 1 remaining:**
-- Supabase Storage bucket setup — create `rfq-files` and `vendor-docs` private buckets in Supabase dashboard; fill `.env.local` with real project credentials.
-- End-to-end test — buyer signup → RFQ submission → admin sees it and assigns a vendor (Phase 1 quality gate).
+**Auth**
+- Pages: `/auth/login` (Suspense-wrapped for Next.js 15 prerender), `/auth/signup` (buyer/vendor role), `/auth/verify-email`, `/auth/reset-password`, `/auth/update-password`.
+- API routes: `/api/auth/callback` (PKCE exchange), `/api/auth/signout`.
 
-**Phase 2 (not started):** Vendor dashboards, quote submission, buyer quote comparison, PO acceptance, threaded messaging, email notifications.
+**Buyer workspace**
+- `/buyer` — dashboard with live RFQ counts + recent list.
+- `/buyer/rfq/new` — multi-field RFQ form with CAD file upload to `rfq-files` Supabase Storage bucket.
+- `/buyer/rfqs` — RFQ list grouped by status with count badges.
+- `/buyer/rfqs/[id]` — part specs, CAD download links, quote list, 5-step status timeline, details sidebar. Shows `?submitted=1` confirmation banner.
+
+**Vendor workspace**
+- `/vendor/register` — 3-step form (company info → capabilities → documents); upserts `vendor_profiles`, inserts `vendor_capabilities` + `vendor_certifications`, uploads docs to `vendor-docs` bucket, sets `kyc_status = pending`.
+- `/vendor/pending` — post-application confirmation page with next-steps list.
+
+**Admin panel**
+- `/admin` — dashboard with live counts (pending RFQs, pending vendors, approved vendors). Gate-checks `org.type === "admin"`, redirects others to `/buyer`.
+- `/admin/rfqs` — RFQ triage; inline vendor assignment dropdown; assigns `rfq_assignments` row and moves RFQ to `in_review`.
+- `/admin/vendors` — approve/reject vendor applications; updates `kyc_status`.
+
+**Documentation**
+- `README.md` — full project documentation: stack, all routes, DB schema, security, local dev setup, Vercel deploy steps.
+- `PROMPT.md` — living source of truth; updated with every commit.
+- `.docx` planning documents updated to reflect Next.js / Node.js / Supabase / Vercel stack.
+
+**Phase 1 remaining (infrastructure only — no code changes needed)**
+- Create `rfq-files` and `vendor-docs` private Storage buckets in Supabase dashboard.
+- Fill `.env.local` and Vercel env vars with real Supabase project credentials.
+- Run migrations in Supabase SQL editor (`001_initial_schema.sql` then `002_rls_policies.sql`).
+- End-to-end quality gate: buyer signup → RFQ submit → admin assigns vendor.
+
+### Phase 2 — Not started
+Vendor dashboards, quote submission, buyer quote comparison, PO acceptance, threaded messaging, email notifications.
 
 ## Deployment
 
