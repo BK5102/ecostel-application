@@ -822,11 +822,10 @@ a.card:hover,
 }
 
 .buyer-protection-panel {
-  align-items: center;
   background: #e9ffe6;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 28px;
-  grid-template-columns: minmax(0, 0.95fr) minmax(260px, 0.85fr);
   margin-bottom: 16px;
   overflow: hidden;
 }
@@ -872,8 +871,10 @@ a.card:hover,
 
 .buyer-protection-image {
   height: auto;
-  justify-self: end;
-  max-height: 340px;
+  max-height: 400px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
   object-fit: contain;
   width: min(100%, 480px);
 }
@@ -1692,7 +1693,6 @@ a.card:hover,
   .hero,
   .page-layout,
   .upload-panel,
-  .buyer-protection-panel,
   .quote-comparison-panel {
     grid-template-columns: 1fr;
   }
@@ -1723,7 +1723,6 @@ a.card:hover,
   }
 
   .buyer-protection-image {
-    justify-self: start;
     max-height: none;
   }
 
