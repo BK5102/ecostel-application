@@ -19,23 +19,6 @@ export default function CapabilitiesPage() {
         <p className="section-copy">Structured matter from structured data.</p>
       </div>
       <PageLayout items={capabilities.map((item) => ({ label: item.label, href: `/capabilities/${item.slug}` }))}>
-        <section className="content-panel quality-systems-panel">
-          <div className="eyebrow">Quality Systems</div>
-          <h2>Production Verified. Documentation Included.</h2>
-          <div className="quality-list">
-            <ul>
-              <li>Certificate of Conformance</li>
-              <li>First Article Inspection</li>
-              <li>CMM)</li>
-            </ul>
-            <ul>
-              <li>Material Test Reports</li>
-              <li>Material Certifications</li>
-              <li>RoHS Compliance</li>
-            </ul>
-          </div>
-        </section>
-
         <section className="materials-download-panel">
           <h2>Download our extensive list of available 3D Printing materials</h2>
           <a className="materials-download-button" href="/3D_Printing_Materials.pdf" download>
