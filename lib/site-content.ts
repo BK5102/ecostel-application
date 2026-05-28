@@ -351,7 +351,7 @@ export const navGroups: NavGroup[] = [
     href: "/solutions",
     items: solutions.map((item) => ({
       label: item.label,
-      href: `/solutions/${item.slug}`,
+      href: item.slug === "instant-quote" ? `/solutions/instant-quote#upload-drawing` : `/solutions/${item.slug}`,
       description: item.description,
     })),
   },
