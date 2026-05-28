@@ -22,7 +22,11 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
 
   return (
     <>
-      <PageHero eyebrow="Industries" title={item.label} description={item.description} />
+      <PageHero
+        eyebrow="Industries"
+        title="We work with teams building the next generation of products."
+        description="Manufacturing support for teams that need faster turnaround, complete visibility, and reliable outcomes."
+      />
       <PageLayout items={industries.map((industry) => ({ label: industry.label, href: `/industries/${industry.slug}` }))}>
         <ContentPanel
           title={item.label}

@@ -26,7 +26,14 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
 
   return (
     <>
-      <PageHero eyebrow="Capabilities" title={item.label} description={item.description} />
+      <PageHero
+        eyebrow="Capabilities"
+        title="Manufacturing as an on-demand system layer."
+        description="Built on advanced manufacturing infrastructure with reliable delivery and reduced operational friction."
+      />
+      <div className="capabilities-intro">
+        <p className="section-copy">Structured matter from structured data.</p>
+      </div>
       <PageLayout items={capabilities.map((capability) => ({ label: capability.label, href: `/capabilities/${capability.slug}` }))}>
         <ContentPanel title={item.label} description={item.description}>
           <div className="tag-list">
@@ -40,6 +47,20 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
 
         {has3DPrinting ? (
           <>
+            <Image
+              className="capability-process-image"
+              src="/notion-assets/manufacturing-parts-only.png"
+              alt="3D printing manufacturing process parts"
+              width={1415}
+              height={520}
+            />
+            <Image
+              className="buyer-protection-image"
+              src="/notion-assets/buyer-protection-parts.png"
+              alt="Production-ready 3D printed parts"
+              width={620}
+              height={500}
+            />
             <section className="materials-download-panel">
               <h2>Download our extensive list of available 3D Printing materials</h2>
               <a className="materials-download-button" href="/3D_Printing_Materials.pdf" download>
@@ -65,13 +86,6 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
                 </p>
                 <span className="buyer-protection-pill">Ecostel Buyer Protection</span>
               </div>
-              <Image
-                className="buyer-protection-image"
-                src="/notion-assets/buyer-protection-parts.png"
-                alt="Production-ready 3D printed parts"
-                width={620}
-                height={500}
-              />
             </section>
           </>
         ) : null}

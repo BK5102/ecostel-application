@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Download, ShieldCheck } from "lucide-react";
 import { ContentPanel, PageHero, PageLayout } from "@/components/page-shell";
 import { capabilities } from "@/lib/site-content";
@@ -19,13 +18,6 @@ export default function CapabilitiesPage() {
       <div className="capabilities-intro">
         <p className="section-copy">Structured matter from structured data.</p>
       </div>
-      <Image
-        className="capability-process-image"
-        src="/notion-assets/manufacturing-parts-only.png"
-        alt="3D printing manufacturing process parts"
-        width={1415}
-        height={520}
-      />
       <PageLayout items={capabilities.map((item) => ({ label: item.label, href: `/capabilities/${item.slug}` }))}>
         <section className="content-panel quality-systems-panel">
           <div className="eyebrow">Quality Systems</div>
@@ -69,13 +61,6 @@ export default function CapabilitiesPage() {
             </p>
             <span className="buyer-protection-pill">Ecostel Buyer Protection</span>
           </div>
-          <Image
-            className="buyer-protection-image"
-            src="/notion-assets/buyer-protection-parts.png"
-            alt="Production-ready 3D printed parts"
-            width={620}
-            height={500}
-          />
         </section>
 
         {capabilities.map((item) => (
