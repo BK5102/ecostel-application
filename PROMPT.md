@@ -106,6 +106,7 @@ Use these phrases and descriptions as the canonical source:
 **Marketing site**
 - All pages live: Home, Capabilities (+ slug), Industries (+ slug), Solutions (+ slug), Resources (+ slug), About, Contact, For Vendors.
 - Brand system — Rubik via `next/font/google`, CSS custom properties (`--brand #0EAB6E`, `--brand-dark`, `--bg`, `--ink`, `--shadow`, `--line`), favicon.
+- Buyer Protection panel — switched from two-column grid to single-column flex; image now renders below text copy on all screen sizes (fixes detached image bug on 3D Printing page).
 - Brand logo — `public/ecostel-logo.png` (white background removed, transparent PNG); all layouts use `<img>` tag, SVG inline fallback removed. Appears in navbar, footer, auth card, buyer sidebar, admin sidebar.
 - SEO — `metadataBase`, OpenGraph, Twitter card, robots metadata.
 - Sidebar nav removed from all 11 content pages — `PageLayout` no longer renders the `<aside>`; content boxes expand to full width.
