@@ -822,12 +822,18 @@ a.card:hover,
 }
 
 .buyer-protection-panel {
+  align-items: center;
   background: #e9ffe6;
   display: flex;
-  flex-direction: column;
-  gap: 28px;
+  flex-direction: row;
+  gap: 40px;
   margin-bottom: 16px;
   overflow: hidden;
+}
+
+.buyer-protection-copy {
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .buyer-protection-kicker {
@@ -872,10 +878,11 @@ a.card:hover,
 .buyer-protection-image {
   border-radius: 8px;
   display: block;
+  flex: 0 0 auto;
   height: auto;
   max-height: 420px;
   object-fit: cover;
-  width: 100%;
+  width: clamp(240px, 38%, 480px);
   width: min(100%, 480px);
 }
 
@@ -1722,8 +1729,13 @@ a.card:hover,
     flex-direction: column;
   }
 
+  .buyer-protection-panel {
+    flex-direction: column;
+  }
+
   .buyer-protection-image {
-    max-height: none;
+    max-height: 320px;
+    width: 100%;
   }
 
   .footer-inner,
