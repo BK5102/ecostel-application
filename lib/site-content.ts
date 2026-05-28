@@ -11,6 +11,8 @@ export type PageContent = {
 export type NavGroup = {
   label: string;
   href: string;
+  /** When true the label is a dropdown trigger only — no top-level page exists */
+  dropdownOnly?: boolean;
   items: Array<{ label: string; href: string; description: string }>;
 };
 
@@ -331,6 +333,7 @@ export const navGroups: NavGroup[] = [
   {
     label: "Capabilities",
     href: "/capabilities",
+    dropdownOnly: true,
     items: capabilities.map((item) => ({
       label: item.label,
       href: `/capabilities/${item.slug}`,
@@ -340,6 +343,7 @@ export const navGroups: NavGroup[] = [
   {
     label: "Industries",
     href: "/industries",
+    dropdownOnly: true,
     items: industries.map((item) => ({
       label: item.label,
       href: `/industries/${item.slug}`,
@@ -358,6 +362,7 @@ export const navGroups: NavGroup[] = [
   {
     label: "Resource",
     href: "/resources",
+    dropdownOnly: true,
     items: resources.map((item) => ({
       label: item.label,
       href: `/resources/${item.slug}`,
@@ -367,6 +372,7 @@ export const navGroups: NavGroup[] = [
   {
     label: "About us",
     href: "/about",
+    dropdownOnly: true,
     items: [
       { label: "About Ecostel", href: "/about", description: aboutContent.description },
       { label: "How we work", href: "/about#values", description: "We're not built like a traditional company." },

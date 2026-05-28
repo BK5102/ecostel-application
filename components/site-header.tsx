@@ -16,10 +16,17 @@ export function SiteHeader() {
           </Link>
           {navGroups.map((group) => (
             <div className="nav-item" key={group.label}>
-              <Link className="nav-trigger" href={group.href}>
-                {group.label}
-                <ChevronDown aria-hidden size={14} />
-              </Link>
+              {group.dropdownOnly ? (
+                <button className="nav-trigger" type="button" aria-haspopup="true">
+                  {group.label}
+                  <ChevronDown aria-hidden size={14} />
+                </button>
+              ) : (
+                <Link className="nav-trigger" href={group.href}>
+                  {group.label}
+                  <ChevronDown aria-hidden size={14} />
+                </Link>
+              )}
               <div className="dropdown">
                 {group.items.map((item) => (
                   <Link className="dropdown-link" href={item.href} key={item.href}>
@@ -38,11 +45,13 @@ export function SiteHeader() {
       </div>
       <nav aria-label="Mobile navigation" className="mobile-nav">
         <Link href="/">Home</Link>
-        {navGroups.map((group) => (
-          <Link href={group.href} key={group.href}>
-            {group.label}
-          </Link>
-        ))}
+        {navGroups.map((group) =>
+          group.dropdownOnly ? null : (
+            <Link href={group.href} key={group.href}>
+              {group.label}
+            </Link>
+          )
+        )}
       </nav>
     </header>
   );
