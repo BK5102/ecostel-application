@@ -445,7 +445,15 @@ a.card:hover,
 /* CTA rendered inside PageHero titleSlot — sits between eyebrow and description */
 .page-hero-cta {
   display: inline-flex;
-  margin: 10px 0 4px;
+  font-size: 18px;
+  margin: 14px 0 6px;
+  padding: 18px 32px;
+}
+
+/* Instant Quote hero — smaller description beneath the CTA */
+.instant-quote-hero .lead {
+  font-size: clamp(13px, 1.2vw, 15px);
+  max-width: 560px;
 }
 
 .capabilities-intro {

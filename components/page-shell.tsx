@@ -12,15 +12,17 @@ export function PageHero({
   title,
   titleSlot,
   description,
+  className,
 }: {
   eyebrow: string;
   title: string;
   /** When provided, renders instead of the <h1> title */
   titleSlot?: ReactNode;
   description: string;
+  className?: string;
 }) {
   return (
-    <section className="page-hero">
+    <section className={`page-hero${className ? ` ${className}` : ""}`}>
       <div className="eyebrow">{eyebrow}</div>
       {titleSlot ?? <h1>{title}</h1>}
       <p className="lead">{description}</p>

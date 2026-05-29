@@ -147,6 +147,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
           ) : undefined
         }
         description={item.description}
+        className={item.slug === "instant-quote" ? "instant-quote-hero" : undefined}
       />
       <PageLayout items={solutions.map((solution) => ({ label: solution.label, href: `/solutions/${solution.slug}` }))}>
         <ContentPanel
