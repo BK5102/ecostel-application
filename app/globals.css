@@ -255,10 +255,10 @@ img {
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
-  gap: 48px;
+  gap: 64px;
   min-height: calc(100vh - 72px);
   align-items: center;
-  padding: 72px 0 56px;
+  padding: 96px 0 80px;
 }
 
 .eyebrow {
@@ -332,7 +332,7 @@ img {
 
 .section {
   border-top: 1px solid var(--line);
-  padding: 76px 0;
+  padding: 96px 0;
 }
 
 .section-heading {
@@ -340,7 +340,7 @@ img {
   align-items: flex-end;
   justify-content: space-between;
   gap: 24px;
-  margin-bottom: 28px;
+  margin-bottom: 44px;
 }
 
 .section-heading h2 {
@@ -375,7 +375,7 @@ img {
 
 .grid {
   display: grid;
-  gap: 16px;
+  gap: 22px;
 }
 
 .grid.three {
@@ -389,8 +389,8 @@ img {
 .card {
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 24px;
+  border-radius: 12px;
+  padding: 28px;
   transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
 }
 
@@ -1032,7 +1032,7 @@ a.card:hover,
 
 .workflow-grid {
   display: grid;
-  gap: 16px;
+  gap: 22px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -1041,8 +1041,8 @@ a.card:hover,
 .contact-card {
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 24px;
+  border-radius: 12px;
+  padding: 28px;
   transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
 }
 
@@ -1325,6 +1325,24 @@ a.card:hover,
   line-height: 1.45;
   margin: 12px auto 0;
   max-width: 260px;
+}
+
+.solution-mid-cta {
+  align-items: center;
+  background: var(--panel-soft);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 24px 32px;
+}
+
+.solution-mid-cta p {
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
 }
 
 .solution-final-cta {

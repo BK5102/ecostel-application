@@ -157,6 +157,15 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
           {item.slug === "instant-quote" ? <QuoteComparison /> : null}
         </ContentPanel>
         {item.slug === "instant-quote" ? <DrawingUpload /> : null}
+        {item.slug !== "instant-quote" ? (
+          <section className="solution-mid-cta">
+            <p>Ready to get started?</p>
+            <Link className="cta" href="/solutions/instant-quote#upload-drawing">
+              Get Instant Quote
+              <ArrowRight aria-hidden size={16} />
+            </Link>
+          </section>
+        ) : null}
         {item.sections.map((section) => (
           <div className="solution-section-stack" key={section.title}>
             <ContentPanel
