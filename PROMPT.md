@@ -111,7 +111,7 @@ Use these phrases and descriptions as the canonical source:
 - Brand logo — `public/ecostel-logo.png` (white background removed, transparent PNG); all layouts use `<img>` tag, SVG inline fallback removed. Appears in navbar, footer, auth card, buyer sidebar, admin sidebar.
 - SEO — `metadataBase`, OpenGraph, Twitter card, robots metadata.
 - Sidebar nav removed from all content pages — `PageLayout` no longer renders the `<aside>`; content boxes expand to full width.
-- Footer scaled down — headline `clamp(16-24px)`, links/body `13px`, grid gap `32px`, link gap `10px`.
+- Footer — headline `clamp(14–18px)`, brand tagline `clamp(12–15px)`, links/body `12px`, column headers `11px`, grid gap `28px`, link gap `8px`, max-width `1200px`. Gap between last page section and footer tightened: `.page-layout` `padding-bottom` reduced from `76px` → `24px`, `.site-footer` `margin-top` reduced from `28px` → `8px`.
 - Solutions / Instant Quote — benefit cards ("Built for Complex Projects" etc.) and "Free to start" CTA live on `/solutions/instant-quote` after "Compare Options Easily"; card borders and CTA wrapper border removed.
 - "Instant Quote" nav dropdown href → `/solutions/instant-quote#upload-drawing` so page scrolls to DrawingUpload on click (`id="upload-drawing"` already on the component).
 - Nav labels for Capabilities, Industries, Resource, and About Us are `<button>` elements (dropdown-only, no top-level navigation). Solutions and Home remain `<Link>` elements. `NavGroup.dropdownOnly` flag controls this. Mobile nav omits dropdown-only groups.
