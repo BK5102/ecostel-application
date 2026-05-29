@@ -104,15 +104,17 @@ Use these phrases and descriptions as the canonical source:
 - `.env.local` template in repo root (gitignored); `.env.local` placeholders used for skeleton Vercel deploy.
 
 **Marketing site**
-- All pages live: Home, Capabilities (+ slug), Industries (+ slug), Solutions (+ slug), Resources (+ slug), About, Contact, For Vendors.
+- Live pages: Home, Capabilities slug only (`/capabilities/[slug]`), Industries slug only (`/industries/[slug]`), Solutions (`/solutions` + `/solutions/[slug]`), Resources slug only (`/resources/[slug]`), About (`/about`), Contact, For Vendors. Index pages for Capabilities, Industries, and Resources have been deleted (return 404).
 - Brand system — Rubik via `next/font/google`, CSS custom properties (`--brand #0EAB6E`, `--brand-dark`, `--bg`, `--ink`, `--shadow`, `--line`), favicon.
-- Buyer Protection panel — switched from two-column grid to single-column flex; image now renders below text copy on all screen sizes (fixes detached image bug on 3D Printing page).
+- Buyer Protection panel — row flex layout (copy left, image right); image rendered with plain `<img>` tag (not Next.js `<Image>`) so CSS `width/object-fit` applies directly. Image is inside the `.buyer-protection-panel` section on both `/capabilities/[slug]` (3D Printing) and the capabilities Buyer Protection section. Stacks to column on mobile.
+- Quality Systems section — moved from `/capabilities` index to `/capabilities/3d-printing-services` slug page, placed below the manufacturing parts image.
 - Brand logo — `public/ecostel-logo.png` (white background removed, transparent PNG); all layouts use `<img>` tag, SVG inline fallback removed. Appears in navbar, footer, auth card, buyer sidebar, admin sidebar.
 - SEO — `metadataBase`, OpenGraph, Twitter card, robots metadata.
-- Sidebar nav removed from all 11 content pages — `PageLayout` no longer renders the `<aside>`; content boxes expand to full width.
+- Sidebar nav removed from all content pages — `PageLayout` no longer renders the `<aside>`; content boxes expand to full width.
 - Footer scaled down — headline `clamp(16-24px)`, links/body `13px`, grid gap `32px`, link gap `10px`.
 - Solutions / Instant Quote — benefit cards ("Built for Complex Projects" etc.) and "Free to start" CTA live on `/solutions/instant-quote` after "Compare Options Easily"; card borders and CTA wrapper border removed.
 - "Instant Quote" nav dropdown href → `/solutions/instant-quote#upload-drawing` so page scrolls to DrawingUpload on click (`id="upload-drawing"` already on the component).
+- Nav labels for Capabilities, Industries, Resource, and About Us are `<button>` elements (dropdown-only, no top-level navigation). Solutions and Home remain `<Link>` elements. `NavGroup.dropdownOnly` flag controls this. Mobile nav omits dropdown-only groups.
 
 **Auth**
 - Pages: `/auth/login` (Suspense-wrapped for Next.js 15 prerender), `/auth/signup` (buyer/vendor role), `/auth/verify-email`, `/auth/reset-password`, `/auth/update-password`.
