@@ -454,7 +454,7 @@ a.card:hover,
   display: grid;
   gap: 22px;
   grid-template-columns: 1fr;
-  padding-bottom: 76px;
+  padding-bottom: 24px;
 }
 
 .page-content-stack {
@@ -1619,7 +1619,7 @@ a.card:hover,
 .site-footer {
   background: #000;
   color: #fff;
-  margin-top: 28px;
+  margin-top: 8px;
   overflow: hidden;
   padding: 22px 24px 28px;
 }
