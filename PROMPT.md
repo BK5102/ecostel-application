@@ -104,17 +104,28 @@ Use these phrases and descriptions as the canonical source:
 - `.env.local` template in repo root (gitignored); `.env.local` placeholders used for skeleton Vercel deploy.
 
 **Marketing site**
-- Live pages: Home, Capabilities slug only (`/capabilities/[slug]`), Industries slug only (`/industries/[slug]`), Solutions (`/solutions` + `/solutions/[slug]`), Resources slug only (`/resources/[slug]`), About (`/about`), Contact, For Vendors. Index pages for Capabilities, Industries, and Resources have been deleted (return 404).
+- Live pages: Home, Capabilities slug only (`/capabilities/[slug]`), Industries slug only (`/industries/[slug]`), Solutions slug only (`/solutions/[slug]`), Resources slug only (`/resources/[slug]`), About (`/about`), Contact, For Vendors. Index pages for Capabilities, Industries, Resources, and Solutions deleted (return 404).
 - Brand system — Rubik via `next/font/google`, CSS custom properties (`--brand #0EAB6E`, `--brand-dark`, `--bg`, `--ink`, `--shadow`, `--line`), favicon.
-- Buyer Protection panel — row flex layout (copy left, image right); image rendered with plain `<img>` tag (not Next.js `<Image>`) so CSS `width/object-fit` applies directly. Image is inside the `.buyer-protection-panel` section on both `/capabilities/[slug]` (3D Printing) and the capabilities Buyer Protection section. Stacks to column on mobile.
-- Quality Systems section — moved from `/capabilities` index to `/capabilities/3d-printing-services` slug page, placed below the manufacturing parts image.
-- Brand logo — `public/ecostel-logo.png` (white background removed, transparent PNG); all layouts use `<img>` tag, SVG inline fallback removed. Appears in navbar, footer, auth card, buyer sidebar, admin sidebar.
+- Buyer Protection panel — row flex layout (copy left, image right); image rendered with plain `<img>` tag so CSS `width/object-fit` applies directly. Stacks to column on mobile.
+- Quality Systems section — lives on `/capabilities/3d-printing-services` only, below the manufacturing parts image.
+- Brand logo — `public/ecostel-logo.png` (transparent PNG); all layouts use `<img>` tag. Appears in navbar, footer, auth card, buyer sidebar, admin sidebar.
 - SEO — `metadataBase`, OpenGraph, Twitter card, robots metadata.
 - Sidebar nav removed from all content pages — `PageLayout` no longer renders the `<aside>`; content boxes expand to full width.
-- Footer — headline `clamp(14–18px)`, brand tagline `clamp(12–15px)`, links/body `12px`, column headers `11px`, grid gap `28px`, link gap `8px`, max-width `1200px`. Gap between last page section and footer tightened: `.page-layout` `padding-bottom` reduced from `76px` → `24px`, `.site-footer` `margin-top` reduced from `28px` → `8px`.
-- Solutions / Instant Quote — benefit cards ("Built for Complex Projects" etc.) and "Free to start" CTA live on `/solutions/instant-quote` after "Compare Options Easily"; card borders and CTA wrapper border removed.
-- "Instant Quote" nav dropdown href → `/solutions/instant-quote#upload-drawing` so page scrolls to DrawingUpload on click (`id="upload-drawing"` already on the component).
-- Nav labels for Capabilities, Industries, Resource, and About Us are `<button>` elements (dropdown-only, no top-level navigation). Solutions and Home remain `<Link>` elements. `NavGroup.dropdownOnly` flag controls this. Mobile nav omits dropdown-only groups.
+- Footer — headline `clamp(14–18px)`, brand tagline `clamp(12–15px)`, links/body `12px`, column headers `11px`, grid gap `28px`, max-width `1200px`. `.page-layout` `padding-bottom` `24px`, `.site-footer` `margin-top` `8px`.
+- Nav labels for Capabilities, Industries, Resource, About Us, and Solutions are `<button>` dropdown-only triggers (no top-level page). Home remains a `<Link>`. `NavGroup.dropdownOnly` controls this. Mobile nav omits dropdown-only groups.
+- "Instant Quote" nav dropdown href → `/solutions/instant-quote#upload-drawing` (scrolls to DrawingUpload).
+- Instant Quote page hero: "Get Instant Quote" CTA button replaces the `<h1>` title via `PageHero` `titleSlot` prop; description below is smaller (`clamp(13–15px)`). `PageHero` accepts optional `className` and `titleSlot` props.
+- Instant Quote sub-sections use a 50/50 split layout (`.sol-split-section` grid). Right column shows a looping CSS/SVG animation panel per section:
+  - "Quote with Speed and Clarity" → DFM feedback bubbles + checkmark (`QuoteSpeedAnimation`)
+  - "Get Accurate Quotes Easily" → file upload + supplier price cards (`AccurateQuotesAnimation`)
+  - "Long-Term Production Planning" → staggered Gantt bars + pulse badge (`ProductionPlanningAnimation`)
+  - "Compare Options Easily" → supplier score bars + best badge (`CompareOptionsAnimation`)
+  - All animations live in `components/solution-animations.tsx`; mobile stacks to single column.
+- Collaboration and Project Tracking benefit/CTA sections: `content-panel` class removed (no border), matching Instant Quote style.
+- Mid-page CTA band (`.solution-mid-cta`) added to all non-instant-quote solution pages after the main ContentPanel.
+- Homepage: manufacturing-parts image removed from Capabilities section; `.section-copy` reduced to `clamp(14–16px)`; Industries tag list enlarged via `.industries-tag-list` (`17px`, `14px 24px` padding).
+- Homepage whitespace: `.section` padding `96px`, `.section-heading` margin-bottom `44px`, `.grid`/`.workflow-grid` gap `22px`, card padding `28px`, card radius `12px`, hero gap `64px`.
+- Solutions / Instant Quote — benefit cards and "Free to start" CTA appear after "Compare Options Easily"; no borders on those sections.
 
 **Auth**
 - Pages: `/auth/login` (Suspense-wrapped for Next.js 15 prerender), `/auth/signup` (buyer/vendor role), `/auth/verify-email`, `/auth/reset-password`, `/auth/update-password`.
