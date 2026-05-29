@@ -353,6 +353,7 @@ export const navGroups: NavGroup[] = [
   {
     label: "Solutions",
     href: "/solutions",
+    dropdownOnly: true,
     items: solutions.map((item) => ({
       label: item.label,
       href: item.slug === "instant-quote" ? `/solutions/instant-quote#upload-drawing` : `/solutions/${item.slug}`,
