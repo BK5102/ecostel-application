@@ -5,7 +5,20 @@ import { ArrowDownRight, ArrowRight, ArrowUpRight, MoreVertical, ThumbsUp } from
 import { DrawingUpload } from "@/components/drawing-upload";
 import { ContentPanel, PageHero, PageLayout } from "@/components/page-shell";
 import { QuoteComparison } from "@/components/quote-comparison";
+import {
+  AccurateQuotesAnimation,
+  CompareOptionsAnimation,
+  ProductionPlanningAnimation,
+  QuoteSpeedAnimation,
+} from "@/components/solution-animations";
 import { findBySlug, solutions } from "@/lib/site-content";
+
+const instantQuoteAnimations = [
+  <QuoteSpeedAnimation key="speed" />,
+  <AccurateQuotesAnimation key="accurate" />,
+  <ProductionPlanningAnimation key="planning" />,
+  <CompareOptionsAnimation key="compare" />,
+];
 
 const instantQuoteBenefits = [
   {
@@ -171,28 +184,39 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
             </Link>
           </section>
         ) : null}
-        {item.sections.map((section) => (
+        {item.sections.map((section, index) => (
           <div className="solution-section-stack" key={section.title}>
-            <ContentPanel
-              title={section.title}
-              description={section.description}
-              image={
-                (item.slug === "collaboration" && section.title === "Work Together") ||
-                (item.slug === "project-tracking" && section.title === "Manage updates and spending")
-                  ? item.image
-                  : undefined
-              }
-            >
-              {"items" in section && section.items ? (
-                <div className="section-bullet-list">
-                  {section.items.map((entry) => (
-                    <span className="section-bullet-item" key={entry}>
-                      {entry}
-                    </span>
-                  ))}
+            {item.slug === "instant-quote" ? (
+              /* 50/50 split layout with CSS animation panel */
+              <section className="content-panel sol-split-section">
+                <div className="sol-split-text">
+                  <h2>{section.title}</h2>
+                  <p>{section.description}</p>
                 </div>
-              ) : null}
-            </ContentPanel>
+                {instantQuoteAnimations[index] ?? null}
+              </section>
+            ) : (
+              <ContentPanel
+                title={section.title}
+                description={section.description}
+                image={
+                  (item.slug === "collaboration" && section.title === "Work Together") ||
+                  (item.slug === "project-tracking" && section.title === "Manage updates and spending")
+                    ? item.image
+                    : undefined
+                }
+              >
+                {"items" in section && section.items ? (
+                  <div className="section-bullet-list">
+                    {section.items.map((entry) => (
+                      <span className="section-bullet-item" key={entry}>
+                        {entry}
+                      </span>
+                    ))}
+                  </div>
+                ) : null}
+              </ContentPanel>
+            )}
             {item.slug === "project-tracking" && section.title === "Monitor Supplier Performance" ? (
               <section className="content-panel supplier-performance-panel">
                 <div className="supplier-performance-table" role="table" aria-label="Supplier performance">
