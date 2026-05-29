@@ -38,13 +38,6 @@ export default function HomePage() {
             <p className="section-copy">Structured matter from structured data.</p>
           </div>
         </div>
-        <Image
-          className="capability-process-image"
-          src="/notion-assets/manufacturing-parts-only.png"
-          alt="3D printing manufacturing process parts"
-          width={1415}
-          height={520}
-        />
         <div className="grid three">
           {capabilities.slice(0, 6).map((item) => (
             <Link className="card" href={`/capabilities/${item.slug}`} key={item.slug}>

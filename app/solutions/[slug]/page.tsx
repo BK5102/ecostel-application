@@ -135,15 +135,19 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
 
   return (
     <>
-      <PageHero eyebrow="Solutions" title={item.label} description={item.description} />
-      {item.slug === "instant-quote" ? (
-        <div className="page-hero-actions">
-          <Link className="cta" href="#upload-drawing">
-            Get Instant Quote
-            <ArrowRight aria-hidden size={16} />
-          </Link>
-        </div>
-      ) : null}
+      <PageHero
+        eyebrow="Solutions"
+        title={item.label}
+        titleSlot={
+          item.slug === "instant-quote" ? (
+            <Link className="cta page-hero-cta" href="#upload-drawing">
+              Get Instant Quote
+              <ArrowRight aria-hidden size={16} />
+            </Link>
+          ) : undefined
+        }
+        description={item.description}
+      />
       <PageLayout items={solutions.map((solution) => ({ label: solution.label, href: `/solutions/${solution.slug}` }))}>
         <ContentPanel
           title={item.label}

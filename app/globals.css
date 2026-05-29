@@ -352,10 +352,10 @@ img {
 
 .section-copy {
   color: var(--muted);
-  font-size: clamp(18px, 2vw, 24px);
-  line-height: 1.45;
-  margin: 16px 0 0;
-  max-width: 780px;
+  font-size: clamp(14px, 1.3vw, 16px);
+  line-height: 1.5;
+  margin: 12px 0 0;
+  max-width: 680px;
 }
 
 .section-copy + .section-copy {
@@ -440,6 +440,12 @@ a.card:hover,
 .page-hero-actions {
   display: flex;
   margin: -22px 0 32px;
+}
+
+/* CTA rendered inside PageHero titleSlot — sits between eyebrow and description */
+.page-hero-cta {
+  display: inline-flex;
+  margin: 10px 0 4px;
 }
 
 .capabilities-intro {

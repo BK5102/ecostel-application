@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 
 type SideItem = {
   label: string;
@@ -9,16 +10,19 @@ type SideItem = {
 export function PageHero({
   eyebrow,
   title,
+  titleSlot,
   description,
 }: {
   eyebrow: string;
   title: string;
+  /** When provided, renders instead of the <h1> title */
+  titleSlot?: ReactNode;
   description: string;
 }) {
   return (
     <section className="page-hero">
       <div className="eyebrow">{eyebrow}</div>
-      <h1>{title}</h1>
+      {titleSlot ?? <h1>{title}</h1>}
       <p className="lead">{description}</p>
     </section>
   );
