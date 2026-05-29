@@ -422,6 +422,16 @@ a.card:hover,
   margin-top: 18px;
 }
 
+.industries-tag-list {
+  gap: 12px;
+}
+
+.industries-tag-list .tag {
+  font-size: 17px;
+  font-weight: 560;
+  padding: 14px 24px;
+}
+
 .tag {
   align-items: center;
   border: 1px solid var(--line);

@@ -135,7 +135,7 @@ export default function HomePage() {
             <h2>Built for teams that can&apos;t afford delays.</h2>
           </div>
         </div>
-        <div className="tag-list">
+        <div className="tag-list industries-tag-list">
           {industries.map((industry) => (
             <Link className="tag" href={`/industries/${industry.slug}`} key={industry.slug}>
               {industry.label}
