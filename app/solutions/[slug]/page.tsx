@@ -288,7 +288,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
         ) : null}
         {item.slug === "collaboration" ? (
           <>
-            <section className="content-panel solution-benefits-panel">
+            <section className="solution-benefits-panel">
               <div className="solution-benefits-grid">
                 {collaborationBenefits.map((benefit) => (
                   <article className="solution-benefit-card" key={benefit.title}>
@@ -301,7 +301,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
                 ))}
               </div>
             </section>
-            <section className="content-panel solution-final-cta">
+            <section className="solution-final-cta">
               <h2>Free to start. Pay only when you buy parts.</h2>
               <Link className="cta" href="/solutions/instant-quote#upload-drawing">
                 Get Instant Quote
