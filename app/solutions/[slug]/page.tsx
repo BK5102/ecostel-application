@@ -163,7 +163,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
         className={item.slug === "instant-quote" ? "instant-quote-hero" : undefined}
       />
       <PageLayout items={solutions.map((solution) => ({ label: solution.label, href: `/solutions/${solution.slug}` }))}>
-        {item.slug !== "collaboration" && item.slug !== "project-tracking" && item.slug !== "quality-management" ? (
+        {item.slug !== "collaboration" && item.slug !== "project-tracking" && item.slug !== "quality-management" && item.slug !== "tariff-management" ? (
           <ContentPanel
             title={item.label}
             description={item.description}
@@ -171,6 +171,9 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
           >
             {item.slug === "instant-quote" ? <QuoteComparison /> : null}
           </ContentPanel>
+        ) : null}
+        {item.slug === "tariff-management" && item.image ? (
+          <Image src={item.image} alt={item.label} width={1200} height={800} className="panel-image" />
         ) : null}
         {item.slug === "instant-quote" ? <DrawingUpload /> : null}
         {item.slug !== "instant-quote" ? (
@@ -197,7 +200,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
               <ContentPanel
                 title={section.title}
                 description={section.description}
-                className={item.slug === "collaboration" || item.slug === "project-tracking" || item.slug === "quality-management" ? "no-border" : undefined}
+                className={item.slug === "collaboration" || item.slug === "project-tracking" || item.slug === "quality-management" || item.slug === "tariff-management" ? "no-border" : undefined}
                 image={
                   (item.slug === "collaboration" && section.title === "Work Together") ||
                   (item.slug === "project-tracking" && section.title === "Manage updates and spending")
