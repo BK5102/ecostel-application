@@ -245,6 +245,7 @@ export const linkedInArticles = [
     title: "The Smarter Factory Isn't Just Coming — It's Here",
     summary: "How automation, data, and connected supply chains are reshaping what modern manufacturing actually looks like today.",
     tag: "Industry Insight",
+    image: "/article-industry-insight.png",
     href: "https://www.linkedin.com/pulse/smarter-factory-isnt-just-coming-ecostel-engineering-issvc/?trackingId=g8tJf%2B%2FdHxuu%2BCULnzlBDg%3D%3D",
   },
   {
