@@ -624,9 +624,8 @@ a.card:hover,
 }
 
 .article-card-image {
-  border-radius: 6px;
-  height: 180px;
-  margin: -24px -24px 4px;
+  height: 200px;
+  margin: -24px -24px 8px;
   object-fit: cover;
   width: calc(100% + 48px);
 }
