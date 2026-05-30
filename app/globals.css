@@ -518,6 +518,11 @@ a.card:hover,
   padding: 32px;
 }
 
+.content-panel.no-border {
+  background: transparent;
+  border: none;
+}
+
 .content-panel + .content-panel {
   margin-top: 16px;
 }

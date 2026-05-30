@@ -199,6 +199,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
               <ContentPanel
                 title={section.title}
                 description={section.description}
+                className={item.slug === "collaboration" ? "no-border" : undefined}
                 image={
                   (item.slug === "collaboration" && section.title === "Work Together") ||
                   (item.slug === "project-tracking" && section.title === "Manage updates and spending")

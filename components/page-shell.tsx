@@ -49,15 +49,17 @@ export function ContentPanel({
   image,
   imageAlt,
   children,
+  className,
 }: {
   title: string;
   description: string;
   image?: string;
   imageAlt?: string;
   children?: React.ReactNode;
+  className?: string;
 }) {
   return (
-    <section className="content-panel">
+    <section className={["content-panel", className].filter(Boolean).join(" ")}>
       <h2>{title}</h2>
       <p>{description}</p>
       {children}
