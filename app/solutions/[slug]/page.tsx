@@ -163,15 +163,11 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
         className={item.slug === "instant-quote" ? "instant-quote-hero" : undefined}
       />
       <PageLayout items={solutions.map((solution) => ({ label: solution.label, href: `/solutions/${solution.slug}` }))}>
-        {item.slug !== "collaboration" ? (
+        {item.slug !== "collaboration" && item.slug !== "project-tracking" ? (
           <ContentPanel
             title={item.label}
             description={item.description}
-            image={
-              item.slug === "instant-quote" || item.slug === "project-tracking"
-                ? undefined
-                : item.image
-            }
+            image={item.slug === "instant-quote" ? undefined : item.image}
           >
             {item.slug === "instant-quote" ? <QuoteComparison /> : null}
           </ContentPanel>
@@ -201,7 +197,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
               <ContentPanel
                 title={section.title}
                 description={section.description}
-                className={item.slug === "collaboration" ? "no-border" : undefined}
+                className={item.slug === "collaboration" || item.slug === "project-tracking" ? "no-border" : undefined}
                 image={
                   (item.slug === "collaboration" && section.title === "Work Together") ||
                   (item.slug === "project-tracking" && section.title === "Manage updates and spending")
@@ -221,7 +217,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
               </ContentPanel>
             )}
             {item.slug === "project-tracking" && section.title === "Monitor Supplier Performance" ? (
-              <section className="content-panel supplier-performance-panel">
+              <section className="supplier-performance-panel">
                 <div className="supplier-performance-table" role="table" aria-label="Supplier performance">
                   <div className="supplier-performance-header" role="row">
                     <span>Ecostel Partners</span>
@@ -268,7 +264,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
         ))}
         {item.slug === "project-tracking" ? (
           <>
-            <section className="content-panel delivery-carrier-panel">
+            <section className="delivery-carrier-panel">
               <h2>Use EXW with your carrier, or we handle delivery.</h2>
               <div className="carrier-logo-row" aria-label="Supported delivery carriers">
                 <span className="carrier-logo carrier-blue-dart">
