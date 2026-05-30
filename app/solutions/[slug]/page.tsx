@@ -163,7 +163,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
         className={item.slug === "instant-quote" ? "instant-quote-hero" : undefined}
       />
       <PageLayout items={solutions.map((solution) => ({ label: solution.label, href: `/solutions/${solution.slug}` }))}>
-        {item.slug !== "collaboration" && item.slug !== "project-tracking" ? (
+        {item.slug !== "collaboration" && item.slug !== "project-tracking" && item.slug !== "quality-management" ? (
           <ContentPanel
             title={item.label}
             description={item.description}
@@ -197,7 +197,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
               <ContentPanel
                 title={section.title}
                 description={section.description}
-                className={item.slug === "collaboration" || item.slug === "project-tracking" ? "no-border" : undefined}
+                className={item.slug === "collaboration" || item.slug === "project-tracking" || item.slug === "quality-management" ? "no-border" : undefined}
                 image={
                   (item.slug === "collaboration" && section.title === "Work Together") ||
                   (item.slug === "project-tracking" && section.title === "Manage updates and spending")
