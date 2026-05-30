@@ -521,6 +521,7 @@ a.card:hover,
 .content-panel.no-border {
   background: transparent;
   border: none;
+  padding-top: 0;
 }
 
 .content-panel + .content-panel {
