@@ -35,7 +35,7 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
         <p className="section-copy">Structured matter from structured data.</p>
       </div>
       <PageLayout items={capabilities.map((capability) => ({ label: capability.label, href: `/capabilities/${capability.slug}` }))}>
-        <ContentPanel title={item.label} description={item.description} className={slug === "3d-printing-services" ? "no-border" : undefined}>
+        <ContentPanel title={item.label} description={item.description} className="no-border">
           <div className="tag-list">
             {item.items.map((tag) => (
               <span className="tag" key={tag}>
