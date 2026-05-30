@@ -163,17 +163,19 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
         className={item.slug === "instant-quote" ? "instant-quote-hero" : undefined}
       />
       <PageLayout items={solutions.map((solution) => ({ label: solution.label, href: `/solutions/${solution.slug}` }))}>
-        <ContentPanel
-          title={item.label}
-          description={item.description}
-          image={
-            item.slug === "instant-quote" || item.slug === "collaboration" || item.slug === "project-tracking"
-              ? undefined
-              : item.image
-          }
-        >
-          {item.slug === "instant-quote" ? <QuoteComparison /> : null}
-        </ContentPanel>
+        {item.slug !== "collaboration" ? (
+          <ContentPanel
+            title={item.label}
+            description={item.description}
+            image={
+              item.slug === "instant-quote" || item.slug === "project-tracking"
+                ? undefined
+                : item.image
+            }
+          >
+            {item.slug === "instant-quote" ? <QuoteComparison /> : null}
+          </ContentPanel>
+        ) : null}
         {item.slug === "instant-quote" ? <DrawingUpload /> : null}
         {item.slug !== "instant-quote" ? (
           <section className="solution-mid-cta">
