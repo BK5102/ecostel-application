@@ -30,7 +30,7 @@ export default function AboutPage() {
         </div>
 
         {/* 2. Why Ecostel? text */}
-        <section className="content-panel">
+        <section className="about-why-panel">
           <h2>Why Ecostel?</h2>
           <p className="about-body">
             We believe building great products shouldn&rsquo;t be limited by manufacturing complexity. Whether it&rsquo;s
@@ -56,7 +56,7 @@ export default function AboutPage() {
         </div>
 
         {/* 4. How we work — values grid with Privacy as last card */}
-        <section className="content-panel" id="values">
+        <section className="about-values-panel" id="values">
           <h2>We&apos;re not built like a traditional company.</h2>
           <div className="grid two" style={{ marginTop: 18 }} id="privacy">
             {values.map(([title, description]) => (

@@ -54,7 +54,7 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
               width={1415}
               height={520}
             />
-            <section className="content-panel quality-systems-panel">
+            <section className="quality-systems-panel">
               <div className="eyebrow">Quality Systems</div>
               <h2>Production Verified. Documentation Included.</h2>
               <div className="quality-list">
@@ -79,7 +79,7 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
               <p>Need something beyond the catalog? We&rsquo;ll source it for you.</p>
             </section>
 
-            <section className="content-panel buyer-protection-panel">
+            <section className="buyer-protection-panel">
               <div className="buyer-protection-copy">
                 <div className="buyer-protection-kicker">
                   <ShieldCheck aria-hidden size={24} />

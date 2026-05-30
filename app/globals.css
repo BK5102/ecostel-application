@@ -579,6 +579,10 @@ a.card:hover,
   width: 100%;
 }
 
+.articles-panel {
+  padding: 32px;
+}
+
 .articles-header {
   margin-bottom: 28px;
 }
@@ -687,6 +691,7 @@ a.card:hover,
 
 .quality-systems-panel {
   margin-bottom: 16px;
+  padding: 32px;
 }
 
 .quality-list {
@@ -748,6 +753,11 @@ a.card:hover,
   font-size: clamp(16px, 1.6vw, 20px);
   line-height: 1.35;
   margin: 24px 0 0;
+}
+
+.about-why-panel,
+.about-values-panel {
+  padding: 32px;
 }
 
 .about-body {
@@ -848,11 +858,13 @@ a.card:hover,
 .buyer-protection-panel {
   align-items: center;
   background: #e9ffe6;
+  border-radius: 8px;
   display: flex;
   flex-direction: row;
   gap: 40px;
   margin-bottom: 16px;
   overflow: hidden;
+  padding: 32px;
 }
 
 .buyer-protection-copy {

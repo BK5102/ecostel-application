@@ -25,7 +25,7 @@ export default async function ResourcePage({ params }: { params: Promise<{ slug:
       <PageHero eyebrow="Resource" title="Case Studies and Articles." description="Built for teams that can't afford delays." />
       <PageLayout items={resources.map((resource) => ({ label: resource.label, href: `/resources/${resource.slug}` }))}>
         {item.slug === "articles" ? (
-          <section className="content-panel">
+          <section className="articles-panel">
             <div className="articles-header">
               <h2>{item.label}</h2>
               <p>{item.description}</p>
