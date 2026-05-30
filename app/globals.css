@@ -618,8 +618,17 @@ a.card:hover,
   display: flex;
   flex-direction: column;
   gap: 10px;
+  overflow: hidden;
   padding: 24px;
   transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
+}
+
+.article-card-image {
+  border-radius: 6px;
+  height: 180px;
+  margin: -24px -24px 4px;
+  object-fit: cover;
+  width: calc(100% + 48px);
 }
 
 .article-card:hover {

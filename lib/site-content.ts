@@ -238,6 +238,7 @@ export const linkedInArticles = [
     title: "Most Tolerance Issues Start Much Earlier Than You Think",
     summary: "Why tolerance stack-ups fail at the design stage — and how catching them early saves time, cost, and rework on the floor.",
     tag: "Design for Manufacturing",
+    image: "/article-design-for-manufacturing.png",
     href: "https://www.linkedin.com/posts/ecostel-engineering_most-tolerance-issues-start-much-earlier-activity-7451924232730595330-DLLx?utm_source=share&utm_medium=member_desktop&rcm=ACoAACdoZn4BegUlAxQQXt58YyzALs9ymzP5dag",
   },
   {

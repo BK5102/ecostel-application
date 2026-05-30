@@ -39,6 +39,10 @@ export default async function ResourcePage({ params }: { params: Promise<{ slug:
                   rel="noopener noreferrer"
                   className="article-card"
                 >
+                  {"image" in article && article.image ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={article.image} alt={article.title} className="article-card-image" />
+                  ) : null}
                   <span className="article-tag">{article.tag}</span>
                   <h3 className="article-title">{article.title}</h3>
                   <p className="article-summary">{article.summary}</p>
