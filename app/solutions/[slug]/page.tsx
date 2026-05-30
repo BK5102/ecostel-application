@@ -188,7 +188,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
           <div className="solution-section-stack" key={section.title}>
             {item.slug === "instant-quote" ? (
               /* 50/50 split layout with CSS animation panel */
-              <section className="content-panel sol-split-section">
+              <section className="sol-split-section">
                 <div className="sol-split-text">
                   <h2>{section.title}</h2>
                   <p>{section.description}</p>
